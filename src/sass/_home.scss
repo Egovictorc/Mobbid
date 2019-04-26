@@ -1,0 +1,59 @@
+.header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2)), url("../images/bg.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    padding: 10vh 0;
+    width: 100%;
+    margin: 0 auto;
+    // background-blend-mode: darken;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    &>*:not(:last-child) {
+        margin-bottom: 10vh;
+    }
+
+    &__heading {
+        padding-left: 10vw;
+        padding-right: 10vw;
+        text-align: center;
+        @extend %first-letter;
+    }
+
+    &__ride {
+        padding-left: 10vw;
+        padding-right: 10vw;
+        text-align: center;
+        font-size: var(--font-medium);
+        @extend %first-letter;
+    }
+
+    &__input {
+        border: none;
+
+        &-container {
+            display: flex;
+            width: 80%;
+            max-width: 50rem;
+        }
+
+        padding-left: var(--padding-side);
+        flex: 50% 1 0;
+    }
+
+    &__button {
+        color: #fff;
+        background-color: var(--color-secondary);
+        border: none;
+        padding: var(--padding-btn);
+        cursor: pointer;
+        display: inline-block;
+        @extend %first-letter;
+    }
+}

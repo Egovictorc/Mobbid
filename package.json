@@ -1,0 +1,39 @@
+{
+  "name": "template2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@loadable/component": "^5.7.0",
+    "axios": "^0.18.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-html-id": "^0.1.5",
+    "react-lazy-load-image-component": "^1.3.2",
+    "react-lazyload": "^2.5.0",
+    "react-redux": "^7.0.2",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "compile:sass": "sass src/sass/main.scss  src/css/style.css --watch"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "validator": "^10.11.0"
+  }
+}

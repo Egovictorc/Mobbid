@@ -1,0 +1,62 @@
+.footer {
+    background-color: var(--color-secondary);
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--margin-medium);
+
+    &__div {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;       
+    }
+
+    &__logo-container {
+        height: 5rem;
+    }
+
+    &__logo {
+        height: 100%;
+        object-fit: contain;
+        
+    }
+
+    &__list{
+        display: flex;
+        margin: 1.5rem 0;
+    }
+
+    &__item{
+        list-style-type: none;
+        
+    }
+    &__link {
+        @extend %first-letter;
+        color: #fff;
+        text-decoration: none;
+        padding: var(--padding-xs);
+        display: block;
+        transition: .3s ease all;
+        cursor: pointer;
+
+        &:hover,
+        &:active
+         {
+            color: var(--color-grey-light);
+        }
+    }
+
+    &__par {
+        padding: var(--padding-xs);
+        
+    }
+}
+
+//NB Instagram icon didn't align well
+// Fix for instagram icon
+
+.footer__instagram {
+    width: 2.5rem;
+    height: 2.6rem;
+}
