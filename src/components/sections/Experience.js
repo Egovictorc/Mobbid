@@ -31,7 +31,7 @@ export const Experience = () => {
 
           <h3 className="experience__div--heading">one-chance free</h3>
           <p className="experience__par">
-            you won't get kidnappe during your trips because every trip is
+            you won't get kidnapped during your trips because every trip is
             monitored closely and all riders must have s guarantor
           </p>
         </div>

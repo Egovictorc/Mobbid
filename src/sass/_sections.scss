@@ -32,12 +32,12 @@
 
         display: flex;
         flex-direction: column;
+        justify-content: space-around;
     }
 
     &__img-container {
         grid-column: 3 / 4;
         grid-row: 2 / 3;
-
     }
 
 
@@ -92,6 +92,11 @@
         margin-bottom: var(--margin-medium);
     }
 
+    &__social,
+    &__ride {
+        border: .1rem solid var(--color-secondary);
+    }
+
     &__heading,
     &__par {}
 
@@ -127,7 +132,7 @@
     }
 
     &__div {
-        width: 30%;
+        width: 33%;
         padding: var(--margin-medium);
 
         display: flex;
@@ -195,6 +200,8 @@
     }
 }
 
+
+///COMPONENTS
 ///MY PLACEHOLDER
 
 .about,
@@ -238,5 +245,6 @@
             transform: rotate(360deg);
         }
     }
-
 }
+
+
