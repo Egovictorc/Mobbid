@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./sections/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
-import Footer from "./pages/sections/Footer";
+import Footer from "./sections/Footer";
 import '../css/style.css';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route exact strict path="/pages/About/" component={About} />
 
           <Route exact strict path="/pages/blog/" component={Blog} />
+          <Route exact strict path="/pages/contact/" component={Contact} />
         </Switch>
         <Footer />
       </div>

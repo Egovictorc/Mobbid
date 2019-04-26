@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'; 
 import LazyLoad from 'react-lazyload';
-import Logo from '../../../images/logo_bgWhite.png';
-import Facebook from '../../../images/facebook2 2.png';
-import Twitter from '../../../images/twitter.png';
-import Instagram from '../../../images/instagram(1).png';
+import Logo from '../../images/logo_bgWhite.png';
+import Facebook from '../../images/facebook2 2.png';
+import Twitter from '../../images/twitter.png';
+import Instagram from '../../images/instagram(1).png';
 
 const Footer = ()=> {
 
@@ -38,19 +38,19 @@ const Footer = ()=> {
                
                 <ul className="footer__list">
                     <li className="footer__item">
-                        <NavLink className="footer__link" to="./">support</NavLink>
+                        <NavLink className="footer__link" to="/">support</NavLink>
                     </li>
                     <li className="footer__item">
-                        <NavLink className="footer__link" to="./">privacy</NavLink>
+                        <NavLink className="footer__link" to="/">privacy</NavLink>
                     </li>
                     <li className="footer__item">
-                        <NavLink className="footer__link" to="./">blog</NavLink>
+                        <NavLink className="footer__link" to="/pages/Blog/">blog</NavLink>
                     </li>
                     <li className="footer__item">
-                        <NavLink className="footer__link" to="./">about us</NavLink>
+                        <NavLink className="footer__link" to="/pages/about/">about us</NavLink>
                     </li>
                     <li className="footer__item">
-                        <NavLink className="footer__link" to="./">careers</NavLink>
+                        <NavLink className="footer__link" to="/">careers</NavLink>
                     </li>
                 </ul>
 

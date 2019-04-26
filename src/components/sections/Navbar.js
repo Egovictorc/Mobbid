@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
-import Logo from "../images/mobbid logo.svg";
-import PlayStoreImage from "../images/download-google-play(1).png";
+import Logo from "../../images/mobbid logo.svg";
+import PlayStoreImage from "../../images/download-google-play(1).png";
 
 
 const Navbar = (props)=> {

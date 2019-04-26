@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Blog = () => {
-
-    return (
+const Contact = (props)=> {
+console.log(props)
+    return(
         <div>
-            <h1 className="blog__heading"> our blog</h1>
-            <div className="relax">
+        <h1 className="contact__heading"> Contact us </h1>
+        <div className="relax">
         <span className="relax__rotate" />
         <p>Relax</p>
         <p>we'r still organizing this page content</p>
@@ -14,4 +14,4 @@ const Blog = () => {
     )
 }
 
-export default Blog;
+export default Contact;

@@ -1,10 +1,10 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 ///IMPORTING IMAGES
-import Community from "../../../images/community@2x.png";
-import Ride from "../../../images/Schedule a ride.png";
-import Pair from "../../../images/undraw_agreement_aajr.png";
-import EnjoyRide from "../../../images/undraw_relaxation_1_wbr7.png";
+import Community from "../../images/community@2x.png";
+import Ride from "../../images/Schedule a ride.png";
+import Pair from "../../images/undraw_agreement_aajr.png";
+import EnjoyRide from "../../images/undraw_relaxation_1_wbr7.png";
 
 
 export const Work = () => {

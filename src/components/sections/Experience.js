@@ -1,10 +1,10 @@
 import React from "react";
 import LazyLoad from "react-lazyload";
-import Shield from "../../../images/shield.png";
-import Protection from "../../../images/protection.png";
-import Group from "../../../images/group.png";
-import GooglePlay from "../../../images/download-google-play(1).png";
-import AppStore from "../../../images/download-app-store.png";
+import Shield from "../../images/shield.png";
+import Protection from "../../images/protection.png";
+import Group from "../../images/group.png";
+import GooglePlay from "../../images/download-google-play(1).png";
+import AppStore from "../../images/download-app-store.png";
 
 export const Experience = () => {
   return (

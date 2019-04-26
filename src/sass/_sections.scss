@@ -48,8 +48,7 @@
 
     }
 
-    & > * {
-    }
+    &>* {}
 }
 
 //SECTION HOW IT WORKS
@@ -57,7 +56,7 @@
 //CONTAINER FOR WORK SECTION
 .work {
     padding: 7rem 7vh;
-    
+
     &__div {
         max-width: 80rem;
         margin: 0 auto calc(4 * var(--margin-medium));
@@ -114,11 +113,7 @@
 .experience {
     color: #fff;
     background-color: var(--color-secondary);
-
-    &__heading {
-        @extend %section-heading;
-    }
-  
+    padding-top: calc(2 * var(--margin-medium));
 
     &__div--container {
         padding: 2rem;
@@ -198,4 +193,50 @@
         height: 100%;
         object-fit: contain;
     }
+}
+
+///MY PLACEHOLDER
+
+.about,
+.contact,
+.blog {
+    &__heading {
+        text-align: center;
+        text-transform: capitalize;
+        color: var(--color-secondary);
+    }
+}
+.relax {
+
+    width: 70%;
+    min-height: 50vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    &__rotate {
+        width: 7rem;
+        height: 7rem;
+        display: block;
+        border: .7rem solid var(--color-secondary);
+        border-right: dotted var(--color-secondary);
+        border-radius: 50%;
+        animation: rotate-circle;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes rotate-circle {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
 }

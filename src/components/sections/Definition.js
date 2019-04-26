@@ -1,6 +1,6 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
-import Phone from "../../../images/phone.png";
+import Phone from "../../images/phone.png";
 
 const Definition = ()=> {
 

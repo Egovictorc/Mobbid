@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 //import Mobbid from "./sections/Sections";
 import LazyLoad from 'react-lazyload';
-import Sections from "./sections/Sections.js";
+import Sections from "../sections/Sections.js";
 
 //  const Definition  = React.lazy( () => import('./sections/Sections'));
 
@@ -31,10 +31,7 @@ const Home = props => {
         </div>
       </div>
       <React.Suspense fallback="Loading ...">
-      
-          <LazyLoad height="100" offset="50">
             <Sections />
-          </LazyLoad>
       </React.Suspense>
 {/* 
       <React.Lazy  >
