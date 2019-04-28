@@ -9,7 +9,13 @@
     &__div {
         display: flex;
         justify-content: space-between; 
-        align-items: center;       
+        align-items: center;   
+        
+        &--link {
+            @media only screen and (max-width: $bp-small) {
+                flex-direction: column;
+            }
+        }
     }
 
     &__logo-container {
@@ -25,6 +31,9 @@
     &__list{
         display: flex;
         margin: 1.5rem 0;
+        @media only screen and (max-width: $bp-small) {
+            margin: 1.5rem 0 0;
+        }
     }
 
     &__item{

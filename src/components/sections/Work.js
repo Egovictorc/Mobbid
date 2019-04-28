@@ -27,7 +27,7 @@ export const Work = () => {
             {/* SCHEDLUE A RIDE */}
             <div className="work__div section__ride ride">
                 
-            <div className="work__img--container ride__img--container">
+            <div className="work__img--container ride__img--container work__order--1">
                     <LazyLoad height={100} offset={50}>
                     <img className="work__img" src={Ride} alt="Ride" />
                     </LazyLoad>
@@ -58,7 +58,7 @@ export const Work = () => {
             {/* ENJOY THE RIDE */}
             <div className="work__div section__enjoy-ride enjoy-ride">
                 
-            <div className="work__img--container enjoy-ride__img--container">
+            <div className="work__img--container enjoy-ride__img--container work__order--1">
                     <LazyLoad height={100} offset={50}>
                     <img className="work__img" src={EnjoyRide} alt="img__enjoy-ride" />
                     </LazyLoad>

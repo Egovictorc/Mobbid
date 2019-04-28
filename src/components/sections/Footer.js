@@ -10,7 +10,7 @@ const Footer = ()=> {
 
     return (
         <footer className="footer">
-            <div className="footer__div">
+            <div className="footer__div footer__div--social">
                 <div className="footer__logo-container">
                 <img className="footer__logo" src={Logo} alt="Mobbid logo" />
                 </div>
@@ -34,7 +34,7 @@ const Footer = ()=> {
                 
             </div>
 
-            <div className="footer__div social">
+            <div className="footer__div footer__div--link">
                
                 <ul className="footer__list">
                     <li className="footer__item">
