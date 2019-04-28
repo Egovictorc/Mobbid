@@ -1,7 +1,9 @@
 /* BREAK POINTS*/
 // Desktop first design implemented
-$bp-medium: 46.875em; //730px //for experience section
+$bp-large: 56.25em; // 900px ///for Navbar
+$bp-medium: 46.875em; //750px //for experience section
 $bp-small:  34.375em; //550px
+$bp-xsmall: 25em; // 450px;
 
 *,
 *::before,
@@ -13,16 +15,21 @@ $bp-small:  34.375em; //550px
 
 :root {
 ///COLOR
-//--color-secondary: dodgerblue;
 --color-secondary:#2d9cdb;
 --color-grey-light: #c5c2c2;
 
 //FONT SIZE
+--font-xlarge: 3.5rem;
+--font-large: 2.5rem;
 --font-medium: 2rem;
+--font-small: 1.8rem;
+--font-xsmall: 1.4rem;
+
 //PADDING
---padding-btn: 1.2rem 1rem; 
+--padding-btn: 1.4rem; 
 --padding-small: 2rem 1.4rem; 
---padding-side: 1rem;
+--padding-section: 2.5rem;
+--padding-side: 2rem;
 --padding-xs: 1rem 1.2rem;
 
 // MARGIN 
@@ -43,11 +50,11 @@ body {
     
     display: grid;
     grid-template-columns: minmax(1rem, 5rem) repeat(6, minmax(3rem, 1fr)) minmax(1rem, 5rem);
-   // grid-template-rows: 9.8rem 90.4rem;
-    grid-template-rows: 9.8rem 80vh;
+    grid-template-rows: 9rem minmax(86vh, 90vh);
+    //grid-template-rows: min-content 80vh;
     grid-auto-flow: rows;
     grid-auto-rows: min-content;
-    grid-gap: 2rem;
+    //grid-gap: 2rem;
 
     & > * {
         grid-column: 1 / -1;
@@ -62,5 +69,7 @@ body {
 }
 
 %section-heading {
-    margin-top: var(--margin-medium);
+    //margin: var(--margin-medium) 0;
+    //margin: 0;
+
 }

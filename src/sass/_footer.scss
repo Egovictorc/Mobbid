@@ -5,6 +5,16 @@
     display: flex;
     flex-direction: column;
     padding: var(--margin-medium);
+    font-size: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        //padding: var(--margin-medium) .7rem;
+        font-size: 1.8rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+        padding: var(--margin-medium) 1rem;
+        font-size: 1.6rem;
+    }
 
     &__div {
         display: flex;
@@ -12,7 +22,7 @@
         align-items: center;   
         
         &--link {
-            @media only screen and (max-width: $bp-small) {
+            @media only screen and (max-width: $bp-medium) {
                 flex-direction: column;
             }
         }

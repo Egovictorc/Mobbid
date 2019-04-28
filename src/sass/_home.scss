@@ -4,43 +4,79 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 0 0;
-    padding: 10vh 0;
+    //padding: 10vh 0;
     width: 100%;
     margin: 0 auto;
     // background-blend-mode: darken;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
 
-    &>*:not(:last-child) {
-        margin-bottom: 10vh;
+    & > *:not(:last-child) {
+        margin-bottom: 7rem;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-bottom: 5rem;
+        }
+        @media only screen and (max-width: $bp-xsmall) {
+            margin-bottom: 3rem;
+        }
     }
+
 
     &__heading {
         padding-left: 10vw;
         padding-right: 10vw;
         text-align: center;
+        font-size: 5.4rem;
         @extend %first-letter;
+
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 4rem;
+        } 
     }
 
     &__ride {
         padding-left: 10vw;
         padding-right: 10vw;
         text-align: center;
-        font-size: var(--font-medium);
+        //font-size: var(--font-medium);
+        font-size: 3rem;
         @extend %first-letter;
+
+        @media only screen and (max-width: $bp-medium) {
+            font-size: var(--font-large);
+        } 
     }
 
     &__input {
-        border: none;
+        border: none;       
+        font-size: var(--font-medium);
+        @media only screen and (max-width: $bp-medium) {
+            font-size: var(--font-small);
+        } 
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.6rem;
+        } 
 
         &-container {
             display: flex;
             width: 80%;
-            max-width: 50rem;
+            min-height: 6rem;
+            max-width: 70rem;
+            @media only screen and (max-width: $bp-small) {
+                min-height: 5rem;
+                width: 90%;
+            }
+
+            @media only screen and (max-width: $bp-xsmall) {
+                flex-direction: column;
+                width: 90%;
+                min-height: 10rem;
+                align-items: center;
+            } 
         }
 
         padding-left: var(--padding-side);
@@ -54,6 +90,18 @@
         padding: var(--padding-btn);
         cursor: pointer;
         display: inline-block;
+        font-size: var(--font-medium);
         @extend %first-letter;
+
+        @media only screen and (max-width: $bp-medium) {
+            font-size: var(--font-small);
+        } 
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.6rem;
+            padding: var(--padding-xs);
+        } 
+        @media only screen and (max-width: $bp-xsmall) {
+            margin-top: 2rem;
+        } 
     }
 }

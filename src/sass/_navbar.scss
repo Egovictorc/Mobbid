@@ -1,9 +1,16 @@
+///STILL WORKING AT NAVIGATION
+
 .nav {
-    padding: 1rem 1vw 0;
+    padding: 0 5vw;
     display: flex;
-    
+    align-items: center;
+
+    @media only screen and (max-width: $bp-large) {
+        padding: 0 3vw;
+    }
+     
     &__logo-container {
-        height: 5rem;
+        margin-right: 3vw;
     }
 
     &__logo {
@@ -15,6 +22,13 @@
     &__list{
         display: flex;
         margin-right: auto;
+
+        @media only screen and (max-width: $bp-medium) {
+         order: 1;
+         margin-right: 0;
+         margin-left: auto;
+        display: none;
+        }
     }
     &__item {
         list-style-type: none;
@@ -23,10 +37,21 @@
     &__link {
         text-decoration: none;
         text-transform: capitalize;
-        padding: var(--padding-xs);
+        padding: 0 var(--padding-xs);
         display: block;
         transition: .3s ease all;
         cursor: pointer;
+        font-size: 2rem;
+
+        
+    @media only screen and (max-width: $bp-medium) {
+       
+        font-size: 1.8rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+       
+        font-size: 1.6rem;
+    }
         
         &:hover {
             color: var(--color-grey-light);
@@ -34,7 +59,10 @@
     }
 
     &__playstore-container {
-        height: 3.2rem;
+        @media only screen and (max-width: $bp-medium) {
+            min-width: 13rem;
+            max-width: 18rem;
+           }
     }
 
     &__playstore {

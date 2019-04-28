@@ -1,20 +1,27 @@
+// FOR ALL SECTIONS
 .section {
 
-    //SECTION HEADING
+    //ALL SECTION HEADING
     &__heading {
         text-align: center;
         text-transform: uppercase;
-        margin-bottom: var(--margin-medium);
+        margin: var(--margin-medium) 0;
+        font-size: var(--font-xlarge);
+
+        @media only screen and (max-width: $bp-xsmall) {
+            font-size: 3.1rem;
+        }
     }
 }
 
 ///DEFINITION SECTION
 .defn {
+    padding: var(--margin-medium) 0; 
     width: 80%;
     //min-height: 82.8rem;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, minmax(15rem, 50rem));
+    grid-template-columns: repeat(2, minmax(25rem, 50rem));
     // grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(15rem, 50rem)) minmax(1rem, 1fr);
 
     grid-template-rows: repeat(2, min-content);
@@ -24,11 +31,15 @@
     justify-content: center;
 
     @media only screen and (max-width: $bp-medium) {
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        grid-column-gap: 2vw;
+        grid-template-columns: repeat(2, minmax(20rem, 1fr));
+        grid-column-gap: 1vw;
+        width: 90%;
     }
 
-    @media only screen and (max-width: $bp-small) {}
+    @media only screen and (max-width: $bp-small) {
+        grid-template-columns: repeat(2, minmax(15rem, 1fr));
+        width: 85%;
+    }
 
     &__heading {
         grid-column: 1 / -1;
@@ -49,6 +60,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        font-size: var(--font-medium)
     }
 
     &__img-container {
@@ -76,7 +88,16 @@
 
 //CONTAINER FOR WORK SECTION
 .work {
-    padding: 7rem 7vh;
+    padding: 7rem 7vw;
+    @media only screen and (max-width: $bp-medium) {
+        padding: 7rem 4vw;
+    }
+
+    &__heading {
+        margin-bottom: calc(2 * var(--margin-medium));
+    }
+    
+    
 
     &__div {
         max-width: 80rem;
@@ -102,9 +123,7 @@
     }
 
     &__article {
-        flex: 50% 0 0;
-        //background-color: red;
-        
+        flex: 50% 0 0;       
     }
 
     &__img {
@@ -125,13 +144,13 @@
 .article {
     //border: 1px solid var(--color-secondary);
     padding: var(--padding-small);
-
+    
     &:first-child {
-        margin-bottom: var(--margin-medium);
+        margin-bottom: var(--margin-medium);   
     }
     
     @media only screen and (max-width: $bp-small) {
-        margin-bottom: var(--margin-medium);
+        margin-bottom: calc(.5 * var(--margin-medium));
     }
 
     &__social,
@@ -149,9 +168,11 @@
     &__heading {
         text-transform: capitalize;
         margin-bottom: var(--margin-medium);
+        font-size: var(--font-large);
     }
 
     &__par {
+        font-size: var(--font-medium);
         &::first-letter {
             text-transform: capitalize;
         }
@@ -163,29 +184,43 @@
 .experience {
     color: #fff;
     background-color: var(--color-secondary);
-    padding: calc(2 * var(--margin-medium)) 0;
+    padding: calc(3 * var(--margin-medium)) 0 calc(5 * var(--margin-medium));
+
+    &__heading {
+       // margin-bottom: calc(2 * var(--margin-medium) );
+    }
 
     &__div--container {
         padding: 2rem;
         width: 100%;
         
-        max-width: 100rem;
+        max-width: 110rem;
         margin: 0 auto;
         // display: flex;
         // justify-content: space-around;
 
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(19rem, 28rem));
+        // grid-template-columns: repeat(auto-fit, minmax(21rem, 30rem));
+        grid-template-columns: repeat(3, minmax(21rem, 30rem));
 
         grid-template-rows: min-content;
         grid-auto-flow: row;
         grid-gap: 2vw;
         place-content: center;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-template-columns: repeat(2, minmax(21rem, 30rem));
+            grid-gap: 5vw 2vw;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            grid-template-columns: minmax(21rem, 30rem);
+            grid-gap: 5vw 0;   
+        }
     }
 
     &__div {
         padding: var(--margin-medium);
-        background-color: yellow;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -193,12 +228,20 @@
         &--heading {
             text-transform: uppercase;
             margin: 3rem 0;
+            font-size: var(--font-large);
+
+
+            /// HAD TOO MUCH BOTTOM MARGIN BELOW THIS POINT
+            @media only screen and (max-width: 655px) {
+                margin: 2rem 0;
+            }
         }
     }
 
     &__par {
         text-align: center;
         @extend %first-letter;
+        font-size: var(--font-medium);
     }
 
     &__img--container {
@@ -222,31 +265,36 @@
     min-width: 100%;
     max-width: 60rem;
     color: #000;
-    padding: var(--margin-medium);
+    padding: calc(3 * var(--margin-medium));
     //background-color: blue;
 
     &__heading {
         @extend %section-heading;
+        margin-bottom: calc(2 * var(--margin-medium));
     }
 
     &__download {
         display: flex;
-        justify-content: center;
+        justify-content: center;       
 
         @media only screen and (max-width: $bp-small) {
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
             height: 15rem;
+            
         }
     }
 
     &__img--container {
 
         flex: 40% 0 0;
-        max-width: 18rem;
-        height: 5rem;
+        max-width: 22rem;
+        min-height: 8rem;
 
+        @media only screen and (max-width: $bp-small) {
+            max-width: 20rem;
+        }
         &:first-child {
             margin-right: var(--margin-medium);
 
@@ -254,8 +302,6 @@
                 margin-right: 0;
             }
         }
-
-
     }
 
     &__download--img {

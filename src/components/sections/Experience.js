@@ -29,7 +29,7 @@ export const Experience = () => {
             <img className="experience__img" src={Protection} alt="img" />
           </div>
 
-          <h3 className="experience__div--heading">one-chance free</h3>
+          <h3 data-type="chance" className="experience__div--heading">one-chance free</h3>
           <p className="experience__par">
             you won't get kidnapped during your trips because every trip is
             monitored closely and all riders must have s guarantor
