@@ -1,7 +1,7 @@
 ///STILL WORKING AT NAVIGATION
 
 .nav {
-    padding: 0 5vw;
+    padding: 0 3vw;
     display: flex;
     align-items: center;
 
@@ -10,7 +10,10 @@
     }
      
     &__logo-container {
-        margin-right: 3vw;
+        margin-right: 1vw;
+        height: var(--logo-height);
+        width: var(--logo-width);
+        font-size: 36;
     }
 
     &__logo {
@@ -21,8 +24,9 @@
 
     &__list{
         display: flex;
+        align-items: center;
         margin-right: auto;
-
+    
         @media only screen and (max-width: $bp-medium) {
          order: 1;
          margin-right: 0;
@@ -38,10 +42,9 @@
         text-decoration: none;
         text-transform: capitalize;
         padding: 0 var(--padding-xs);
-        display: block;
         transition: .3s ease all;
         cursor: pointer;
-        font-size: 2rem;
+        font-size: var(--font-link);
 
         
     @media only screen and (max-width: $bp-medium) {
@@ -59,6 +62,7 @@
     }
 
     &__playstore-container {
+        height: 3rem;
         @media only screen and (max-width: $bp-medium) {
             min-width: 13rem;
             max-width: 18rem;

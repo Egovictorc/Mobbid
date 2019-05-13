@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 //import Mobbid from "./sections/Sections";
+import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import Sections from "../sections/Sections.js";
 
@@ -9,13 +10,13 @@ import Sections from "../sections/Sections.js";
 //  const Work = React.lazy( ()=> import("./sections/Sections.js"));
 
 const Home = props => {
-  console.log(props);
+  console.log(props.match.params.id);
 
   return (
     <Fragment>
       <div className="header">
         <h1 className="header__heading ">
-          comfort and convenience <span>on rides to work</span>
+          comfort and convenience on rides to work
         </h1>
         <p className="header__ride">
           schedule ride with friends, co-workers and neighbours
@@ -27,16 +28,16 @@ const Home = props => {
             name="phone"
             placeholder="Enter Phone Number"
           />
+          
           <button className="header__button"> schedule a ride</button>
+          
+
         </div>
       </div>
       <React.Suspense fallback="Loading ...">
             <Sections />
       </React.Suspense>
-{/* 
-      <React.Lazy  >
-        <Mobbid />
-      </React.Lazy> */}
+
     </Fragment>
   );
 };

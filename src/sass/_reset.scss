@@ -19,30 +19,42 @@ $bp-xsmall: 25em; // 450px;
 --color-grey-light: #c5c2c2;
 
 //FONT SIZE
---font-xlarge: 3.5rem;
---font-large: 2.5rem;
+--font-link: 1.5rem;
+--font-xlarge: 3.2rem;
+--font-large: 2.4rem;
 --font-medium: 2rem;
 --font-small: 1.8rem;
 --font-xsmall: 1.4rem;
+
+//LOGO
+--logo-height: 3.6rem; 
+--logo-width: 10.6rem; 
 
 //PADDING
 --padding-btn: 1.4rem; 
 --padding-small: 2rem 1.4rem; 
 --padding-section: 2.5rem;
---padding-side: 2rem;
+--padding-side: 1.2rem;
 --padding-xs: 1rem 1.2rem;
 
 // MARGIN 
+--margin-large: 7vh;
 --margin-medium: 4vh;
 }
 
+
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
-    font-size: 1.6rem;
+       font-size: 1.6rem;
+       font-family: 'Nunito', sans-serif;
+        //font-style: normal;
+        font-weight: 400;
+    
 }
 
 .container {
@@ -50,7 +62,7 @@ body {
     
     display: grid;
     grid-template-columns: minmax(1rem, 5rem) repeat(6, minmax(3rem, 1fr)) minmax(1rem, 5rem);
-    grid-template-rows: 9rem minmax(86vh, 90vh);
+    grid-template-rows: 6rem calc(100vh - 6rem);
     //grid-template-rows: min-content 80vh;
     grid-auto-flow: rows;
     grid-auto-rows: min-content;
@@ -69,7 +81,53 @@ body {
 }
 
 %section-heading {
-    //margin: var(--margin-medium) 0;
-    //margin: 0;
+    // text-transform: uppercase;
+}
 
+
+///ARTICLE
+.article {
+    //border: 1px solid var(--color-secondary);
+    padding: var(--padding-small);
+    
+    &:first-child {
+        margin-bottom: var(--margin-medium);   
+    }
+    
+    @media only screen and (max-width: $bp-small) {
+        margin-bottom: calc(.5 * var(--margin-medium));
+    }
+
+    &__social,
+    &__ride {
+        border: .1rem solid var(--color-secondary);
+        padding-right: 4vw;
+    }
+
+    &__heading,
+    &__par {
+        @media only screen and (max-width: $bp-small) {
+            text-align: center;
+        }
+    }
+
+    &__par {
+        font-size: var(--font-medium);
+        &:first-letter {
+            text-transform: capitalize;
+        }
+    }
+
+    &__heading {
+        text-transform: capitalize;
+        margin-bottom: var(--margin-medium);
+        font-size: var(--font-large);
+    }
+
+    &__par {
+        font-size: var(--font-medium);
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
 }

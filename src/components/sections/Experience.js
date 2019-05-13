@@ -7,6 +7,7 @@ import GooglePlay from "../../images/download-google-play(1).png";
 import AppStore from "../../images/download-app-store.png";
 
 export const Experience = () => {
+
   return (
     <section className="section experience">
       <h2 className="section__heading experience__heading">the mobbid experience</h2>

@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Blog = () => {
+const Blog = (props) => {
+console.log(props.histroy)
+
+    useEffect( ()=> {
+        setTimeout(()=>{
+            props.history.push("/")
+        }, 10000)
+    },[])
 
     return (
         <div>

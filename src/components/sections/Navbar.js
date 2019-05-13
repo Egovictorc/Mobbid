@@ -6,6 +6,13 @@ import PlayStoreImage from "../../images/download-google-play(1).png";
 
 const Navbar = (props)=> {
 
+let links = [
+    {to: "/", item: "home"},
+    {to: "/", item: "how it works"},
+    {to: "/", item: "customer stories"},
+    {to: "/pages/About/", item: "about us"},
+    {to: "/pages/Blog/", item: "blog"},
+]
     console.log(props)
     return (
         <div className="nav">
@@ -14,18 +21,9 @@ const Navbar = (props)=> {
             </div>
 
             <ul className="nav__list">
-                <li className="nav__item">
-                    <NavLink className="nav__link" to="/">home</NavLink>
-                </li>
-                <li className="nav__item">
-                    <NavLink className="nav__link" to="/pages/About/">about</NavLink>
-                </li>
-                <li className="nav__item">
-                    <NavLink className="nav__link" to="/pages/contact/">contact us</NavLink>
-                </li>
-                <li className="nav__item">
-                    <NavLink className="nav__link" to="/pages/Blog/">blog</NavLink>
-                </li>
+                {links.map( link => <li className="nav__item" key={link.item}>
+                    <NavLink className="nav__link" to={link.to}> {link.item} </NavLink> </li>
+                )} 
             </ul>
 
             <div className="nav__playstore-container">

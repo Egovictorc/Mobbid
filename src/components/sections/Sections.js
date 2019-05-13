@@ -9,23 +9,18 @@ import { default as Experience, Improve } from "./Experience";
 const Sections = () => {
   const fallBack = <p>Loading ...</p>;
 
+  let sections = [
+    {name: Definition, },
+    {name: Work, },
+    {name: Experience, },
+    {name: Improve, },
+  ]
   return (
     <section>
-      <Suspense fallback={fallBack}>
-        <Definition />
-      </Suspense>
-
-      <LazyLoad height="70">
-        <Work />
+    { sections.map( section => <LazyLoad height="70">
+      <section.name />
       </LazyLoad>
-
-      <LazyLoad height="70">
-        <Experience />
-      </LazyLoad>
-
-      <LazyLoad height="70">
-        <Improve />
-      </LazyLoad>
+    )}
     </section>
   );
 };

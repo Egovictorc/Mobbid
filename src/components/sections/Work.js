@@ -65,7 +65,7 @@ export const Work = () => {
                 </div>
 
                 <article className="work__article article">
-                    <h3 className="work__article--heading article__heading">relax and exjoy the ride</h3>
+                    <h3 className="work__article--heading article__heading">relax and enjoy the ride</h3>
                     <p className="work__article--par article__par">
                         it's always fun to ride with mobbid, meet new friends and have a great discussion
                     </p>
