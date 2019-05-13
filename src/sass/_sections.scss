@@ -12,6 +12,9 @@
         @media only screen and (max-width: $bp-xsmall) {
             font-size: 3.1rem;
         }
+        @media only screen and (max-width: $bp-large) {
+            font-size: var(--font-large);
+        }
     }
 }
 
@@ -30,15 +33,21 @@
     grid-column-gap: 5vw;
     justify-content: center;
 
-    @media only screen and (max-width: $bp-medium) {
-        grid-template-columns: repeat(2, minmax(20rem, 1fr));
-        grid-column-gap: 1vh;
-        width: 90%;
+    @media only screen and (max-width: $bp-large) {
+        // grid-template-columns: repeat(2, minmax(30rem, 1fr));
+        grid-column-gap: .5vw;
+        max-width: 84%;
     }
-
+    
+    @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0;
+        max-width: 90%;
+        // background-color: red;
+    }
     @media only screen and (max-width: $bp-small) {
         grid-template-columns: repeat(2, minmax(15rem, 1fr));
-        width: 85%;
+        max-width: 85%;
     }
 
     &__heading {
@@ -49,7 +58,6 @@
     &__article-container {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        
         @media only screen and (max-width: $bp-small) {
             grid-column: 1 / -1;
         }
@@ -85,9 +93,16 @@
 
 //CONTAINER FOR WORK SECTION
 .work {
-    padding: 8rem 7vw;
+    // padding: 8rem 7vw;
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+
     @media only screen and (max-width: $bp-medium) {
-        padding: 7rem 4vw;
+        max-width: 90%;
+    }
+    @media only screen and (max-width: $bp-large) {
+        max-width: 88%;
     }
 
     &__heading {
@@ -151,30 +166,32 @@
     &__div--container {
         padding: 2rem;
         width: 100%;
-        
-        max-width: 110rem;
-        margin: 0 auto;
-        // display: flex;
-        // justify-content: space-around;
+        max-width: 118rem;
+        margin: 0 auto;;
 
         display: grid;
         // grid-template-columns: repeat(auto-fit, minmax(21rem, 30rem));
-        grid-template-columns: repeat(3, minmax(21rem, 30rem));
-
+        grid-template-columns: repeat(3, minmax(23rem, 35rem));
         grid-template-rows: min-content;
         grid-auto-flow: row;
-        grid-gap: 2vw;
+        grid-column-gap: 1vw;
         place-content: center;
 
-        @media only screen and (max-width: $bp-medium) {
-            grid-template-columns: repeat(2, minmax(21rem, 30rem));
-            grid-gap: 5vw 2vw;
-        }
+    
 
+        @media only screen and (max-width: $bp-large) {
+            grid-template-columns: repeat(3, minmax(18rem, 28rem));
+            grid-column-gap: 1.2vw; 
+        }
+        @media only screen and (max-width: $bp-medium) {
+            grid-template-columns: repeat(2, minmax(21rem, 1frrem));
+            grid-column-gap: 0;
+        }
         @media only screen and (max-width: $bp-small) {
             grid-template-columns: minmax(21rem, 30rem);
             grid-gap: 5vw 0;   
         }
+
     }
 
     &__div {
@@ -182,12 +199,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        
+        @media only screen and (max-width: $bp-medium){
+            padding: .8rem;
+        }
+    
         &--heading {
             text-transform: uppercase;
             margin: 3rem 0;
-            font-size: var(--font-large);
-
 
             /// HAD TOO MUCH BOTTOM MARGIN BELOW THIS POINT
             @media only screen and (max-width: 655px) {
@@ -198,7 +217,7 @@
 
     &__par {
         text-align: center;
-        @extend %first-letter;
+        // @extend %first-letter;
         // font-size: var(--font-medium);
     }
 
@@ -208,6 +227,10 @@
         height: auto;
         //height: 80%;
         margin-bottom: var(--margin-medium);
+
+        @media only screen and (max-width: $bp-medium) {
+            max-width: 30%;
+        }
     }
 
     &__img {
@@ -252,9 +275,16 @@
         @media only screen and (max-width: $bp-small) {
             max-width: 20rem;
         }
+        @media only screen and (max-width: $bp-large) {
+            max-height: 5rem;
+        }
+
         &:first-child {
             margin-right: var(--margin-medium);
 
+            @media only screen and (max-width: $bp-medium) {
+                margin-right: 0;
+            }
             @media only screen and (max-width: $bp-small) {
                 margin-right: 0;
             }

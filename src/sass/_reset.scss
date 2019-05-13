@@ -1,7 +1,8 @@
 /* BREAK POINTS*/
 // Desktop first design implemented
 $bp-large: 56.25em; // 900px ///for Navbar
-$bp-medium: 46.875em; //750px //for experience section
+$bp-medium: 43.75em; //700px //for experience section
+// $bp-medium: 46.875em; //750px //for experience section
 $bp-small:  34.375em; //550px
 $bp-xsmall: 25em; // 450px;
 
@@ -111,17 +112,13 @@ body {
         }
     }
 
-    &__par {
-        font-size: var(--font-medium);
-        &:first-letter {
-            text-transform: capitalize;
-        }
-    }
-
     &__heading {
         text-transform: capitalize;
         margin-bottom: var(--margin-medium);
         font-size: var(--font-large);
+        @media only screen and (max-width: $bp-large) {
+            font-size: var(--font-medium);
+        }
     }
 
     &__par {
@@ -129,5 +126,19 @@ body {
         &::first-letter {
             text-transform: capitalize;
         }
+        @media only screen and (max-width: $bp-large) {
+            font-size: var(--font-small);
+        }
     }
+}
+
+.heading-3 {
+    font-size: var(--font-medium);
+    text-align: center;
+    @media only screen and (max-width: $bp-large) {
+        font-size: var(--font-small);
+    }
+}
+.heading-2 {
+
 }

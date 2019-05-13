@@ -18,8 +18,8 @@ export const Experience = () => {
             <img className="experience__img" src={Shield} alt="img" />
           </div>
 
-          <h3 className="experience__div--heading">safe</h3>
-          <p className="experience__par">
+          <h3 className="experience__div--heading heading-3">safe</h3>
+          <p className="experience__par article__par">
             vehicle checks on every vehicle and valid licence is required for
             all users
           </p>
@@ -30,10 +30,10 @@ export const Experience = () => {
             <img className="experience__img" src={Protection} alt="img" />
           </div>
 
-          <h3 data-type="chance" className="experience__div--heading">one-chance free</h3>
-          <p className="experience__par">
+          <h3 data-type="chance" className="experience__div--heading heading-3">one-chance free</h3>
+          <p className="experience__par article__par">
             you won't get kidnapped during your trips because every trip is
-            monitored closely and all riders must have s guarantor
+            monitored closely and all riders must have a guarantor
           </p>
         </div>
 
@@ -41,8 +41,8 @@ export const Experience = () => {
           <div className="experience__img--container">
             <img className="experience__img" src={Group} alt="img" />
           </div>
-          <h3 className="experience__div--heading">reliable</h3>
-          <p className="experience__par">
+          <h3 className="experience__div--heading heading-3">reliable</h3>
+          <p className="experience__par article__par">
             mobbid makes sure your experience during any trip is pleasant
           </p>
         </div>
