@@ -29,15 +29,18 @@ const Home = props => {
             name="phone"
             placeholder="Enter Phone Number"
           />
-          
+
           <button className="header__button"> schedule a ride</button>
           
-
         </div>
       </div>
-      <React.Suspense fallback="Loading ...">
+      {/* <React.Suspense fallback="Loading ...">
             <Sections />
-      </React.Suspense>
+      </React.Suspense> */}
+
+      <LazyLoad height={70}>
+        <Sections />
+      </LazyLoad>
 
     </Fragment>
   );

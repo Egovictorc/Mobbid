@@ -6,7 +6,7 @@ const Contact = (props)=> {
   useEffect( ()=> {
     setTimeout(()=>{
         props.history.push("/")
-    }, 10000)
+    }, 30000)
 },[])
 
 console.log(props)

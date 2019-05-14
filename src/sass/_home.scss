@@ -51,7 +51,6 @@
     }
 
     &__ride {
-        
         min-width: 40%;
         max-width: 52rem;
         text-align: center;
@@ -75,25 +74,32 @@
     }
 
     &__input {
+        min-width: 17rem;
         border: none;       
         font-size: var(--font-small);
-      
+        color: var(--color-grey-dark);
+        max-width: 60%;
+        padding-left: var(--padding-side);
+        flex: 50% 1 0;
         @media only screen and (max-width: $bp-large) {
             font-size: 1.6rem;
         } 
         @media only screen and (max-width: $bp-medium) {
-            font-size: var(--font-xsmall);
+            // font-size: var(--font-xsmall);
+            // flex: 40% 1 0;
         }
-        @media only screen and (max-width: $bp-small) {
-            font-size: 1.2rem;
+        @media only screen and (max-width: $bp-xsmall) {
+            font-size: var(--font-xsmall);
         } 
 
+
         &-container {
+            
             display: flex;
-            width: 80%;
+            // width: 80%;
             min-height: 5rem;
-            min-width: 45%;
-            max-width: 52rem;
+            width: 70%;
+            max-width: 45rem;
             @media only screen and (max-width: $bp-small) {
                 min-height: 5rem;
                 max-width: 85%;
@@ -101,32 +107,36 @@
 
             @media only screen and (max-width: $bp-xsmall) {
                 flex-direction: column;
-                width: 90%;
+                max-width: 90%;
                 min-height: 10rem;
                 align-items: center;
             } 
         }
 
-        padding-left: var(--padding-side);
-        flex: 50% 1 0;
     }
 
     &__button {
+        
         color: #fff;
         background-color: var(--color-secondary);
         border: none;
-        padding: var(--padding-btn);
+        padding: var(--padding-btn-bg);
         cursor: pointer;
         display: inline-block;
         font-size: var(--font-medium);
+        transition: .4s ease;
         @extend %first-letter;
+
+        &:hover {
+            color: var(--color-grey-light);
+        }
 
         @media only screen and (max-width: $bp-medium) {
             font-size: var(--font-small);
         } 
         @media only screen and (max-width: $bp-small) {
             font-size: 1.6rem;
-            padding: var(--padding-xs);
+            padding: var(--padding-btn);
         } 
         @media only screen and (max-width: $bp-xsmall) {
             margin-top: 2rem;

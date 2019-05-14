@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const About = props => {
+const Works = props => {
 
   useEffect( ()=> {
     setTimeout(()=>{
@@ -10,7 +10,7 @@ const About = props => {
 
   return (
     <div>
-      <h1 className="about__heading"> About us </h1>
+      <h1 className="about__heading"> how it works </h1>
       <div className="relax">
         <span className="relax__rotate" />
         <p>Relax</p>
@@ -20,4 +20,4 @@ const About = props => {
   );
 };
 
-export default About;
+export default Works;

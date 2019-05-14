@@ -8,8 +8,8 @@ const Navbar = (props)=> {
 
 let links = [
     {to: "/", item: "home"},
-    {to: "/", item: "how it works"},
-    {to: "/", item: "customer stories"},
+    {to: "/pages/Works/", item: "how it works"},
+    {to: "/pages/Customer/", item: "customer stories"},
     {to: "/pages/About/", item: "about us"},
     {to: "/pages/Blog/", item: "blog"},
 ]

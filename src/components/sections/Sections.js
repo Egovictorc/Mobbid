@@ -4,7 +4,6 @@ import Definition from "./Definition";
 import Work from "./Work";
 import { default as Experience, Improve } from "./Experience";
 
-//const Work = LazyLoad(() => import("./Work"));
 
 const Sections = () => {
   const fallBack = <p>Loading ...</p>;
@@ -14,15 +13,19 @@ const Sections = () => {
     {name: Work, },
     {name: Experience, },
     {name: Improve, },
-  ]
+  ];
+
   return (
-    <section>
-    { sections.map( section => <LazyLoad height="70">
+    <main>
+      <section>
+    { sections.map( section => <LazyLoad height={70}>
       <section.name />
       </LazyLoad>
     )}
     </section>
-  );
+ 
+    </main>  
+  )
 };
 
 export default Sections;

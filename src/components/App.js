@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import Works from "./pages/Works";
+import Customer from "./pages/Customer";
 import NotFound from "./pages/NotFound";
 import Footer from "./sections/Footer";
 import '../css/style.css';
@@ -20,6 +22,8 @@ const App = () => {
     {path: "/pages/About/", component: About},
     {path: "/pages/Blog/", component: Blog},
     {path: "/pages/Contact/", component: Contact},
+    {path: "/pages/Works/", component: Works},
+    {path: "/pages/Customer/", component: Customer},
   ]
 
   return (

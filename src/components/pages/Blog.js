@@ -6,7 +6,7 @@ console.log(props.histroy)
     useEffect( ()=> {
         setTimeout(()=>{
             props.history.push("/")
-        }, 10000)
+        }, 30000)
     },[])
 
     return (

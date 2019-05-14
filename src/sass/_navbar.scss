@@ -45,14 +45,14 @@
         transition: .3s ease all;
         cursor: pointer;
         font-size: var(--font-link);
-
+        color: var(--color-grey-light);
         @media only screen and (max-width: $bp-small) {
             
         }
         @media only screen and (max-width: $bp-medium) {
             font-size: 1.4rem;
         } 
-        
+   
         &:hover {
             color: var(--color-grey-light);
         }
@@ -77,5 +77,6 @@
 
 // ////THIS ACTIVE CLASS IS AUTOMATICALLY PLACED BY REACT NAVLINK Component
 .active {
-    color: var(--color-grey-light);
+    // color: var(--color-grey-light);
+    color: var(--color-secondary);
 }
