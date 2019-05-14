@@ -6,22 +6,22 @@
         margin: var(--margin-medium) 0 ;
         text-align: center;
         text-transform: uppercase;
-        
         font-size: var(--font-xlarge);
 
-        @media only screen and (max-width: $bp-xsmall) {
-            font-size: 3.1rem;
-        }
         @media only screen and (max-width: $bp-large) {
             font-size: var(--font-large);
+        }
+          
+        @media only screen and (max-width: $bp-xsmall) {
+            font-size: 2.2rem;
         }
     }
 }
 
 ///DEFINITION SECTION
 .defn {
-    padding: var(--margin-large) 0; 
-    max-width: 75%;
+    padding: calc(2 * var(--margin-large)) 0 var(--margin-large); 
+    max-width: 78%;
     //min-height: 82.8rem;
     margin: 0 auto;
     display: grid;
@@ -35,8 +35,8 @@
 
     @media only screen and (max-width: $bp-large) {
         // grid-template-columns: repeat(2, minmax(30rem, 1fr));
-        grid-column-gap: .5vw;
-        max-width: 84%;
+        grid-column-gap: .2vw;
+        max-width: 88%;
     }
     
     @media only screen and (max-width: $bp-medium) {
@@ -46,8 +46,8 @@
         // background-color: red;
     }
     @media only screen and (max-width: $bp-small) {
-        grid-template-columns: repeat(2, minmax(15rem, 1fr));
-        max-width: 85%;
+        grid-template-columns: repeat(2, minmax(13rem, 1fr));
+        max-width: 80%;
     }
 
     &__heading {
@@ -93,7 +93,8 @@
 
 //CONTAINER FOR WORK SECTION
 .work {
-    // padding: 8rem 7vw;
+    
+    padding: 5rem 0 8rem;
     max-width: 80%;
     margin-right: auto;
     margin-left: auto;
@@ -106,7 +107,12 @@
     }
 
     &__heading {
-        margin-bottom: calc(3.5 * var(--margin-medium));
+        margin-bottom: calc(3 * var(--margin-medium));
+
+        @media only screen and (max-width: $bp-medium) {
+            margin-bottom: calc(2 * var(--margin-medium));
+        }
+
     }
         
 
@@ -159,9 +165,9 @@
     background-color: var(--color-secondary);
     padding: calc(2 * var(--margin-medium)) 0 calc(5 * var(--margin-medium));
 
-    // &__heading {
-    //    // margin-bottom: calc(2 * var(--margin-medium) );
-    // }
+    @media only screen and (max-width: $bp-small) {
+        padding: calc(2 * var(--margin-medium)) calc(2 * var(--margin-medium)) calc(5 * var(--margin-medium));
+    }
 
     &__div--container {
         padding: 2rem;
@@ -184,17 +190,17 @@
             grid-column-gap: 1.2vw; 
         }
         @media only screen and (max-width: $bp-medium) {
-            grid-template-columns: repeat(2, minmax(21rem, 1frrem));
+            grid-template-columns: repeat(2, minmax(21rem, 1fr));
             grid-column-gap: 0;
+            grid-row-gap: 10vh;  
         }
         @media only screen and (max-width: $bp-small) {
-            grid-template-columns: minmax(21rem, 30rem);
-            grid-gap: 5vw 0;   
+            grid-template-columns: minmax(21rem, 28rem);
         }
-
     }
 
     &__div {
+        
         padding: var(--margin-medium);
         display: flex;
         flex-direction: column;
@@ -217,6 +223,7 @@
 
     &__par {
         text-align: center;
+        
         // @extend %first-letter;
         // font-size: var(--font-medium);
     }
@@ -243,14 +250,16 @@
 
 //SECTION IMPROVE
 .improve {
-    min-width: 100%;
-    max-width: 60rem;
+    padding: 0 5vw;
+    min-width: 70%;
+    // max-width: 60rem;
     color: #000;
-    margin: calc(3 * var(--margin-medium)) 0;
+    margin: calc(3 * var(--margin-medium)) auto;
     //background-color: blue;
 
     &__heading {
-        
+        // text-align: center;
+        // background-color: red;
         margin-bottom: calc(2 * var(--margin-medium));
     }
 

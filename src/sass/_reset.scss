@@ -81,11 +81,6 @@ body {
     }
 }
 
-%section-heading {
-    // text-transform: uppercase;
-}
-
-
 ///ARTICLE
 .article {
     //border: 1px solid var(--color-secondary);
@@ -137,8 +132,5 @@ body {
     text-align: center;
     @media only screen and (max-width: $bp-large) {
         font-size: var(--font-small);
-    }
-}
-.heading-2 {
-
+    }   
 }

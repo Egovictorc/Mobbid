@@ -20,7 +20,7 @@
         display: flex;
         justify-content: space-between; 
         align-items: center;   
-        
+                
         &--link {
             @media only screen and (max-width: $bp-medium) {
                 flex-direction: column;
@@ -40,6 +40,7 @@
 
     &__list{
         display: flex;
+        align-items: center;
         margin: 1.2rem 0;
         @media only screen and (max-width: $bp-small) {
             margin: 1.5rem 0 0;
@@ -48,18 +49,29 @@
 
     &__item{
         list-style-type: none;
-        
+                
     }
     &__link {
         @extend %first-letter;
         color: #fff;
         text-decoration: none;
         padding: var(--padding-xs);
-        display: block;
+        display: inline-block;
         transition: .3s ease all;
         cursor: pointer;
-        
+        @media only screen and (max-width: $bp-xsmall) {
+            font-size: var(--font-xsmall);
+            padding: .8rem 1rem;
+        }
 
+        &--social {
+            padding: 0 var(--padding-xs);
+            @media only screen and (max-width: $bp-xsmall) {
+                font-size: var(--font-xsmall);
+                padding: 0 1rem;
+            }
+        }
+   
         &:hover,
         &:active
          {
@@ -78,5 +90,5 @@
 
 .footer__instagram {
     width: 2.5rem;
-    height: 2.6rem;
+    height: 2.6rem;   
 }

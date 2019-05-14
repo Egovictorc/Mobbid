@@ -44,6 +44,10 @@
         @media only screen and (max-width: $bp-medium) {
             font-size: 4rem;
         } 
+        @media only screen and (max-width: $bp-small) {
+            font-size: 3.6rem;
+            max-width: 90%;
+        } 
     }
 
     &__ride {
@@ -55,12 +59,17 @@
         font-size: 3rem;
         @extend %first-letter;
 
-        @media only screen and (max-width: $bp-medium) {
-            font-size: 2rem;
-        } 
+     
         @media only screen and (max-width: $bp-large) {
             max-width: 42rem;
             font-size: 2.2rem;
+        } 
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 2rem;
+        } 
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            max-width: 30rem;
         } 
 
     }
@@ -68,16 +77,15 @@
     &__input {
         border: none;       
         font-size: var(--font-small);
-        
-        @media only screen and (max-width: $bp-small) {
-            font-size: 1.2rem;
+      
+        @media only screen and (max-width: $bp-large) {
+            font-size: 1.6rem;
         } 
-         
         @media only screen and (max-width: $bp-medium) {
             font-size: var(--font-xsmall);
         }
-        @media only screen and (max-width: $bp-large) {
-            font-size: 1.6rem;
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.2rem;
         } 
 
         &-container {
@@ -88,7 +96,7 @@
             max-width: 52rem;
             @media only screen and (max-width: $bp-small) {
                 min-height: 5rem;
-                width: 90%;
+                max-width: 85%;
             }
 
             @media only screen and (max-width: $bp-xsmall) {

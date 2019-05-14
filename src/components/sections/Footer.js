@@ -41,7 +41,7 @@ const Footer = () => {
         <ul className="footer__list">
           {socialLinks.map(link => (
             <li className="footer__item">
-              <NavLink className="footer__link" to={link.to} title={link.title}>
+              <NavLink className="footer__link footer__link--social" to={link.to} title={link.title}>
                 <img
                   src={link.src}
                   alt={link.alt}
