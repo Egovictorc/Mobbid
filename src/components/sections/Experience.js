@@ -13,7 +13,7 @@ export const Experience = () => {
       <h2 className="section__heading experience__heading">the mobbid experience</h2>
 
       <div className="experience__div--container">
-        <div className="experience__div">
+        <div className="experience__div experience__safe">
           <div className="experience__img--container">
             <img className="experience__img" src={Shield} alt="img" />
           </div>
@@ -25,7 +25,7 @@ export const Experience = () => {
           </p>
         </div>
 
-        <div className="experience__div">
+        <div className="experience__div experience__free">
           <div className="experience__img--container">
             <img className="experience__img" src={Protection} alt="img" />
           </div>
@@ -37,7 +37,7 @@ export const Experience = () => {
           </p>
         </div>
 
-        <div className="experience__div">
+        <div className="experience__div experience__reliable">
           <div className="experience__img--container">
             <img className="experience__img" src={Group} alt="img" />
           </div>

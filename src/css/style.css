@@ -39,6 +39,7 @@
 
 :root {
   --color-secondary:#2d9cdb;
+  --color-secondary-light:#78bae0;
   --color-grey-light: #c5c2c2;
   --color-grey-dark: #b87272;
   --font-link: 1.5rem;
@@ -289,9 +290,9 @@ body {
 }
 .header__input {
   min-width: 17rem;
-  border: none;
+  border: 0.1rem solid var(--color-secondary);
   font-size: var(--font-small);
-  color: var(--color-grey-dark);
+  color: var(--color-secondary-light);
   max-width: 60%;
   padding-left: var(--padding-side);
   flex: 50% 1 0;
@@ -301,9 +302,15 @@ body {
     font-size: 1.6rem;
   }
 }
+@media only screen and (max-width: 34.375em) {
+  .header__input {
+    max-width: 57%;
+  }
+}
 @media only screen and (max-width: 25em) {
   .header__input {
     font-size: var(--font-xsmall);
+    min-height: 4.7rem;
   }
 }
 .header__input-container {
@@ -315,7 +322,8 @@ body {
 @media only screen and (max-width: 34.375em) {
   .header__input-container {
     min-height: 5rem;
-    max-width: 85%;
+    width: 82%;
+    max-width: 90%;
   }
 }
 @media only screen and (max-width: 25em) {
@@ -335,9 +343,13 @@ body {
   display: inline-block;
   font-size: var(--font-medium);
   transition: 0.4s ease;
+  background-color: transparent;
+  border: 1px solid var(--color-secondary);
+  border-left: none;
 }
 .header__button:hover {
-  color: var(--color-grey-light);
+  color: #fff;
+  background-color: var(--color-secondary);
 }
 @media only screen and (max-width: 43.75em) {
   .header__button {
@@ -353,6 +365,7 @@ body {
 @media only screen and (max-width: 25em) {
   .header__button {
     margin-top: 2rem;
+    border: 1px solid var(--color-secondary);
   }
 }
 

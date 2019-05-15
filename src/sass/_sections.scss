@@ -183,8 +183,6 @@
         grid-column-gap: 1vw;
         place-content: center;
 
-    
-
         @media only screen and (max-width: $bp-large) {
             grid-template-columns: repeat(3, minmax(18rem, 28rem));
             grid-column-gap: 1.2vw; 
