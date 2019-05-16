@@ -13,6 +13,7 @@ import '../css/style.css';
 import Sections from './sections/Sections';
 
 import definition from "./sections/Definition";
+import FormPage from "./form/FormContainer";
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
     {path: "/pages/Contact/", component: Contact},
     {path: "/pages/Works/", component: Works},
     {path: "/pages/Customer/", component: Customer},
+    {path: "/pages/FormPage/", component: FormPage},
   ]
 
   return (

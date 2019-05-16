@@ -40,7 +40,7 @@ const Footer = () => {
         </div>
         <ul className="footer__list">
           {socialLinks.map(link => (
-            <li className="footer__item">
+            <li className="footer__item" key={link.alt}>
               <NavLink className="footer__link footer__link--social" to={link.to} title={link.title}>
                 <img
                   src={link.src}
@@ -56,7 +56,7 @@ const Footer = () => {
       <div className="footer__div footer__div--link">
         <ul className="footer__list">
           {pageLinks.map(link => (
-            <li className="footer__item">
+            <li className="footer__item" key={link.name}>
               <NavLink className="footer__link" to={link.to}>
                 {link.name}
               </NavLink>

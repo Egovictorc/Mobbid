@@ -18,7 +18,7 @@ const Sections = () => {
   return (
     <main>
       <section>
-    { sections.map( section => <LazyLoad height={70}>
+    { sections.map( section => <LazyLoad height={100}>
       <section.name />
       </LazyLoad>
     )}
