@@ -11,7 +11,7 @@ const Contact = (props)=> {
 
 console.log(props)
     return(
-        <div>
+        <div className="contact">
         <h1 className="contact__heading"> Contact us </h1>
         <div className="relax">
         <span className="relax__rotate" />

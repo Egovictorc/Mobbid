@@ -6,6 +6,9 @@ $bp-medium: 43.75em; //700px //for experience section
 $bp-small:  34.375em; //550px
 $bp-xsmall: 25em; // 450px;
 
+//BREAKPOINTS FOR FORM 
+$bp-xlarge:  63.125em; //1010px
+
 *,
 *::before,
 *::after {
@@ -44,6 +47,8 @@ $bp-xsmall: 25em; // 450px;
 // MARGIN 
 --margin-large: 7vh;
 --margin-medium: 4vh;
+
+--margin-field: 2rem;
 }
 
 
@@ -66,7 +71,7 @@ body {
     
     display: grid;
     grid-template-columns: minmax(1rem, 5rem) repeat(6, minmax(3rem, 1fr)) minmax(1rem, 5rem);
-    grid-template-rows: 6rem calc(100vh - 6rem);
+    grid-template-rows: 6rem;
     //grid-template-rows: min-content 80vh;
     grid-auto-flow: rows;
     grid-auto-rows: min-content;

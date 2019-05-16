@@ -9,7 +9,7 @@ const Customer = props => {
 },[])
 
   return (
-    <div>
+    <div className="customer">
       <h1 className="about__heading"> Customer Stories </h1>
       <div className="relax">
         <span className="relax__rotate" />
