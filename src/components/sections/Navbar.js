@@ -12,6 +12,8 @@ let links = [
     {to: "/pages/Customer/", item: "customer stories"},
     {to: "/pages/About/", item: "about us"},
     {to: "/pages/Blog/", item: "blog"},
+    ///TESTING FORM COMPONENT
+    {to: "/form/FormPage/", item: "form"}
 ]
     console.log(props)
     return (

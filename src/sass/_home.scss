@@ -75,9 +75,9 @@
 
     &__input {
         min-width: 17rem;
-        border: none;       
+        border: .1rem solid var(--color-secondary);     
         font-size: var(--font-small);
-        color: var(--color-grey-dark);
+        color: var(--color-secondary-light);
         max-width: 60%;
         padding-left: var(--padding-side);
         flex: 50% 1 0;
@@ -88,10 +88,14 @@
             // font-size: var(--font-xsmall);
             // flex: 40% 1 0;
         }
+     
+        @media only screen and (max-width: $bp-small) {
+            max-width: 57%;
+        } 
         @media only screen and (max-width: $bp-xsmall) {
             font-size: var(--font-xsmall);
+            min-height: 4.7rem;
         } 
-
 
         &-container {
             
@@ -102,7 +106,8 @@
             max-width: 45rem;
             @media only screen and (max-width: $bp-small) {
                 min-height: 5rem;
-                max-width: 85%;
+                width: 82%;
+                max-width: 90%;
             }
 
             @media only screen and (max-width: $bp-xsmall) {
@@ -110,6 +115,7 @@
                 max-width: 90%;
                 min-height: 10rem;
                 align-items: center;
+                
             } 
         }
 
@@ -119,6 +125,7 @@
         
         color: #fff;
         background-color: var(--color-secondary);
+        
         border: none;
         padding: var(--padding-btn-bg);
         cursor: pointer;
@@ -127,8 +134,15 @@
         transition: .4s ease;
         @extend %first-letter;
 
+        ///START HERE TO STYLE BUTTON
+        background-color: transparent;
+        border: 1px solid var(--color-secondary);
+        border-left: none;
+
         &:hover {
-            color: var(--color-grey-light);
+            // color: var(--color-grey-light);
+            color: #fff;
+            background-color: var(--color-secondary);
         }
 
         @media only screen and (max-width: $bp-medium) {
@@ -140,6 +154,7 @@
         } 
         @media only screen and (max-width: $bp-xsmall) {
             margin-top: 2rem;
+            border: 1px solid var(--color-secondary);
         } 
     }
 }

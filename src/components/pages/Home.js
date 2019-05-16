@@ -5,13 +5,9 @@ import LazyLoad from 'react-lazyload';
 import { withFormik, Field } from 'formik';
 import Sections from "../sections/Sections.js";
 
-//  const Definition  = React.lazy( () => import('./sections/Sections'));
-
-//  const Work = LazyLoad( ()=> import('./sections/Sections'))
-//  const Work = React.lazy( ()=> import("./sections/Sections.js"));
 
 const Home = props => {
-  console.log(props.match.params.id);
+  // console.log(props.match.params.id);
 
   return (
     <Fragment>
