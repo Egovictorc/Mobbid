@@ -25,7 +25,7 @@ const App = () => {
     {path: "/pages/Contact/", component: Contact},
     {path: "/pages/Works/", component: Works},
     {path: "/pages/Customer/", component: Customer},
-    {path: "/pages/FormPage/", component: FormPage},
+    {path: "/form/FormPage/", component: FormPage},
   ]
 
   return (

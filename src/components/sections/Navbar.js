@@ -13,7 +13,7 @@ let links = [
     {to: "/pages/About/", item: "about us"},
     {to: "/pages/Blog/", item: "blog"},
     ///TESTING FORM COMPONENT
-    {to: "pages/FormPage/", item: "form"}
+    {to: "/form/FormPage/", item: "form"}
 ]
     console.log(props)
     return (
