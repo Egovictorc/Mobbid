@@ -9,7 +9,7 @@ const Works = props => {
 },[])
 
   return (
-    <div>
+    <div className="works">
       <h1 className="about__heading"> how it works </h1>
       <div className="relax">
         <span className="relax__rotate" />
