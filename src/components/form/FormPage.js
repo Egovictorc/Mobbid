@@ -76,7 +76,7 @@ const GetFreeRide = props => {
       />
       
       <Field component={renderSelect} name="home" label="Home">
-        <option>Select your home location</option>
+        <option className="">Select your home location</option>
         {homes.map(home => (
           <option key={home}> {home} </option>
         ))}

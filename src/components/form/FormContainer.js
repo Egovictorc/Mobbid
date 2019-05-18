@@ -3,7 +3,7 @@ import FormFormik from "./FormFormik";
 import traffic from "../../images/traffic.png";
 
 const FormContainer = props => {
-
+console.log(props)
   return (
     <div className="getRide getRide--cont">
       <div className="getRide__div">
@@ -17,7 +17,7 @@ const FormContainer = props => {
       </div>
 
       <div className="getRide__img--cont">
-        <img src={traffic} alt="traffic" className="getRide__img" />
+        {/* <img src={traffic} alt="traffic" className="getRide__img" /> */}
       </div>
 
     </div>

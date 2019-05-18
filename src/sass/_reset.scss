@@ -19,8 +19,9 @@ $bp-xlarge:  63.125em; //1010px
 
 :root {
 ///COLOR
+--color-secondary-dark:#136b9e;
 --color-secondary:#2d9cdb;
---color-secondary-light:#78bae0;
+--color-secondary-light:#84ccf6;
 --color-grey-light: #c5c2c2;
 --color-grey-dark: #b87272;
 
@@ -42,6 +43,7 @@ $bp-xlarge:  63.125em; //1010px
 --padding-small: 2rem 1.4rem; 
 --padding-section: 2.5rem;
 --padding-side: 1.2rem;
+--padding-side-xs: .8rem;
 --padding-xs: 1rem 1.2rem;
 
 // MARGIN 
