@@ -389,10 +389,12 @@ body {
   }
 }
 .header__input {
-  min-width: 17rem;
+  min-height: 5.4rem;
+  background-color: #e1e1e1;
+  min-width: 22rem;
   border: 0.1rem solid var(--color-secondary);
   font-size: var(--font-small);
-  color: var(--color-secondary-light);
+  color: var(--color-secondary);
   max-width: 60%;
   padding-left: var(--padding-side);
   flex: 50% 1 0;
@@ -400,6 +402,11 @@ body {
 @media only screen and (max-width: 56.25em) {
   .header__input {
     font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 43.75em) {
+  .header__input {
+    min-width: 25rem;
   }
 }
 @media only screen and (max-width: 34.375em) {
@@ -411,13 +418,21 @@ body {
   .header__input {
     font-size: var(--font-xsmall);
     min-height: 4.7rem;
+    min-width: 22rem;
   }
 }
 .header__input-container {
   display: flex;
+  justify-content: center;
+  align-items: stretch;
   min-height: 5rem;
-  width: 70%;
-  max-width: 45rem;
+  min-width: 85%;
+  max-width: 74rem;
+}
+@media only screen and (max-width: 43.75em) {
+  .header__input-container {
+    flex-direction: column;
+  }
 }
 @media only screen and (max-width: 34.375em) {
   .header__input-container {
@@ -428,13 +443,30 @@ body {
 }
 @media only screen and (max-width: 25em) {
   .header__input-container {
-    flex-direction: column;
     max-width: 90%;
     min-height: 10rem;
     align-items: center;
   }
 }
+.header__input--div {
+  min-width: 18rem;
+  max-width: 100%;
+  margin-right: 2rem;
+  display: flex;
+}
+@media only screen and (max-width: 43.75em) {
+  .header__input--div {
+    align-items: center;
+    flex-direction: column;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+.header__input--error {
+  max-width: 18rem;
+}
 .header__button {
+  height: 5.2rem;
   color: #fff;
   background-color: var(--color-secondary);
   border: none;
@@ -445,7 +477,11 @@ body {
   transition: 0.4s ease;
   background-color: transparent;
   border: 1px solid var(--color-secondary);
-  border-left: none;
+}
+@media only screen and (max-width: 43.75em) {
+  .header__button {
+    margin: 0 auto;
+  }
 }
 .header__button:hover {
   color: #fff;

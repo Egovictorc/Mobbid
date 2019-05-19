@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Navbar from "./sections/Navbar";
-import Home from "./pages/Home";
+import Home from "./pages/homepage/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
@@ -10,10 +10,7 @@ import Customer from "./pages/Customer";
 import NotFound from "./pages/NotFound";
 import Footer from "./sections/Footer";
 import '../css/style.css';
-import Sections from './sections/Sections';
-
-import definition from "./sections/Definition";
-import FormPage from "./form/FormContainer";
+import FormPage from "./pages/form/FormContainer";
 
 
 const App = () => {

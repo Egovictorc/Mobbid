@@ -1,9 +1,11 @@
 import React, { Fragment } from "react";
-//import Mobbid from "./sections/Sections";
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import { withFormik, Field } from 'formik';
-import Sections from "../sections/Sections.js";
+import Sections from "./sections/Sections.js";
+import HomeForm from './HomeForm';
+import { asyncCreateUser } from '../../actionCreators/ActionCreators';
+import { connect } from 'react-redux';
 
 
 const Home = props => {
@@ -18,7 +20,15 @@ const Home = props => {
         <p className="header__ride">
           schedule ride with friends, co-workers and neighbours
         </p>
-        <div className="header__input-container">
+
+        <HomeForm createUser={props.createUser} />
+        {/* <div className="header__input-container">
+          <input
+            className="header__input"
+            type="phone"
+            name="phone"
+            placeholder="Enter Phone Number"
+          />
           <input
             className="header__input"
             type="phone"
@@ -28,7 +38,7 @@ const Home = props => {
 
           <button className="header__button"> schedule a ride</button>
           
-        </div>
+        </div> */}
       </div>
       {/* <React.Suspense fallback="Loading ...">
             <Sections />
@@ -42,4 +52,14 @@ const Home = props => {
   );
 };
 
-export default Home;
+// const mapDispatchToProps = (dispatch)=> {
+//   return ({
+//     createUser: (user) => dispatch ({type: "CREATE_USER", payload: user }) 
+//   })
+// }
+
+const mapDispatchToProps = {asyncCreateUser};
+
+const connectedHome = connect(null, mapDispatchToProps)(Home);
+
+export default connectedHome;

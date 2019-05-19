@@ -44,10 +44,11 @@ let homes = ["surulere", "VI", "Lekki", "Mile 2", "oshodi", "ikeja"];
 //SORT LOCATION LIST
 homes = homes.sort();
 
+
 const GetRideForm = props => {
   // console.log("props: ", props);
   const {
-    handleSubmit,
+    handleSubmit, handleChange,
     dirty,
     isSubmitting,
     handleReset,
@@ -125,14 +126,18 @@ const GetRideForm = props => {
 //   return errors
 // }
 
+//Yup Validation
+const schema = Yup.object().shape({
+  firstName: Yup.string().min(3, "first name must be up to 5 characters").required("* First name must not be empty"),
+  lastName: Yup.string().min(3, "last name must be up to 5 characters").required("* Last name must not be empty"),
+  phoneNumber: Yup.number().required("* Phone number must not be empty").typeError("* That doesn't look like a phone number")
+});
+
 export default withFormik({
   // validate,
   handleSubmit: (values)=>{ 
     console.log(values)},
   handleDrag: false,
-  validationSchema: Yup.object().shape({
-    firstName: Yup.string().min(5, "first name must be up to 5 characters").required("* First name must not be empty"),
-    lastName: Yup.string().min(4, "last name must be up to 5 characters").required("* Last name must not be empty"),
-    phoneNumber: Yup.number().required("* Phone number must not be empty").typeError("* That doesn't look like a phone number")//.min(5, "* incomplete number")
+  validationSchema: schema,
   })
-})(GetRideForm);
+(GetRideForm);

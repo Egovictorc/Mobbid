@@ -1,9 +1,17 @@
 import React from "react";
 import FormFormik from "./FormFormik";
-import traffic from "../../images/traffic.png";
+import traffic from "../../../images/traffic.png";
+import { connect } from 'react-redux';
+
+const mapStateToProps = (state)=> {
+  const { users } = state.rootReducer;
+  return users[0]
+}
+
 
 const FormContainer = props => {
-console.log(props)
+console.log("form_container: ", props)
+
   return (
     <div className="getRide getRide--cont">
       <div className="getRide__div">
@@ -24,4 +32,6 @@ console.log(props)
   );
 };
 
-export default FormContainer;
+
+
+export default connect(mapStateToProps)(FormContainer);
