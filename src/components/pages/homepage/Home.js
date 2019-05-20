@@ -4,7 +4,8 @@ import LazyLoad from 'react-lazyload';
 import { withFormik, Field } from 'formik';
 import Sections from "./sections/Sections.js";
 // import HomeForm from './HomeForm';
-import HomeForm from './ReduxForm';
+// import HomeForm from './ReduxForm';
+import OrdForm from './OrdForm';
 import * as modal from './HomeModal';
 import { asyncCreateUser, increment } from '../../actionCreators/ActionCreators';
 import { connect } from 'react-redux';
@@ -33,7 +34,7 @@ const Context = React.createContext();
           schedule ride with friends, co-workers and neighbours
         </p>
         
-        <HomeForm createUser={props.asyncCreateUser} />
+        <OrdForm createUser={props.asyncCreateUser} />
         
         {/* <div className="header__input-container">
           <input
