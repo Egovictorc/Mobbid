@@ -8,7 +8,7 @@
     @media only screen and (max-width: $bp-large) {
         padding: 0 4vw;
     }
-     
+
     &__logo-container {
         margin-right: 1vw;
         height: var(--logo-height);
@@ -22,50 +22,79 @@
         object-fit: contain;
     }
 
-    &__list{
+    &__list {
         display: flex;
         align-items: center;
         margin-right: auto;
-    
+        transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+
         @media only screen and (max-width: $bp-medium) {
-         order: 1;
-         margin-right: 0;
-         margin-left: auto;
-        display: none;
+            order: 1;
+            margin-right: 0;
+            margin-left: auto;
+            // display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 0;
+            overflow: hidden;
+            // background-color: red;
+            background-image: radial-gradient(#136b9e 25%, #6d31b1e0);
+            justify-content: center;
+            align-items: center;
         }
     }
+
     &__item {
         list-style-type: none;
+        
+        @media only screen and (max-width: $bp-medium) {
+            margin-bottom: 2rem;
+        }
     }
 
     &__link {
         text-decoration: none;
         text-transform: capitalize;
-        padding: 0 var(--padding-xs);
+        padding: 0 var(--padding-side-xs);
         transition: .3s ease all;
         cursor: pointer;
         font-size: var(--font-link);
         color: var(--color-grey-light);
-        @media only screen and (max-width: $bp-small) {
-            
-        }
+        display: inline-block;
+        transition: .3s ease all;
+        background-image: linear-gradient(105deg, #fff 50%, transparent 50%);
+        background-position: 0;
+        background-repeat: no-repeat;
+        background-size: 0%;
+
+        @media only screen and (max-width: $bp-small) {}
+
         @media only screen and (max-width: $bp-medium) {
-            font-size: 1.4rem;
-        } 
-   
+            font-size: 1.6rem;
+            padding: var(--padding-xs);
+            // background-color: blue;
+        }
         &:hover {
             color: var(--color-grey-light);
+            @media only screen and (max-width: $bp-medium) {
+                padding: var(--padding-xs);
+                color: var(--color-secondary);
+                background-size: 200%;
+            }
         }
     }
 
     &__playstore-container {
         height: 3rem;
         width: 10rem;
-        
+
         @media only screen and (max-width: $bp-medium) {
             min-width: 13rem;
             max-width: 18rem;
-           }
+        }
     }
 
     &__playstore {
@@ -73,9 +102,96 @@
         height: 100%;
         object-fit: contain;
     }
+
+    ///NAVIGATION   
+    &__collapse {
+        position: fixed;
+        top: 4rem;
+        right: 4rem;
+        // display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-secondary);
+        // padding: var(--padding-xs);
+        display: none;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 5;
+
+        @media only screen and (max-width: $bp-medium) {
+            display: flex;
+        }
+
+        &--icon-cont {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 11;  
+        }
+
+        &--icon {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: .2s ease all;
+
+            &::before,
+            &::after {
+                display: block;
+                content: "";
+                position: absolute;
+                z-index: 15;
+                transition: .3s ease all;
+            }
+
+            &,
+            &::before,
+            &::after {
+                background-color: #fff;
+                width: 3rem;
+                height: .3rem;    
+            }
+
+            &::before {
+                top: -.8rem;
+            }
+
+            &::after {
+                top: .8rem;
+            }
+
+        }
+
+    }
+
+    &__toggler {
+        display: none;
+    }
+
+    &__toggler:checked ~ &__collapse--icon-cont &__collapse--icon {
+        background-color: transparent;
+        
+        &::before {
+            top: 0;
+            transform: rotate(-135deg);
+        }
+
+        &::after {
+            top: 0;
+            transform: rotate(135deg);
+        }
+    }
 }
 
-// ////THIS ACTIVE CLASS IS AUTOMATICALLY PLACED BY REACT NAVLINK Component
+
+
+// ////THIS ACTIVE CLASS wAS AUTOMATICALLY PLACED BY REACT NAVLINK
 .active {
     // color: var(--color-grey-light);
     color: var(--color-secondary);

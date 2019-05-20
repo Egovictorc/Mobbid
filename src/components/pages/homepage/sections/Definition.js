@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import LazyLoad from 'react-lazyload';
 import { withRouter, Link } from 'react-router-dom';
-import Phone from "../../images/phone.png";
+import Phone from "../../../../images/phone.png";
 
 const Definition = props=> {
     
