@@ -37,7 +37,12 @@ const [count, setCount] = useState(1)
     const db = firebase.firestore();
     //CALL SENDING SO AS TO RENDER SENDING REQUEST
     (isValid) && props.sending(true);
+<<<<<<< HEAD
     const userRef = db.collection("users").doc(values.firstName).set({
+=======
+    if (isValid) {
+      const userRef = db.collection("users").doc(values.firstName).set({
+>>>>>>> master
       // firstName: values.firstName,
       // phoneNumber: Number(values.phoneNumber),
       ...values,
@@ -49,7 +54,7 @@ const [count, setCount] = useState(1)
     .catch( err => {
       console.log(err)
     })
-  }
+  }}
 
   return (
     <form onSubmit={handleSubmit} className="header__input-container">
