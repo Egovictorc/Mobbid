@@ -1,6 +1,6 @@
 import React from "react";
 import { withFormik, Field } from "formik";
-import { connect } from 'react-redux';
+import firebase from "firebase/app";
 import * as Yup from "yup";
 
 let inputField = ({ type, field, label, form: { errors, touched } }) => {
@@ -23,12 +23,23 @@ let inputField = ({ type, field, label, form: { errors, touched } }) => {
 };
 
 const HomeForm = props => {
-  const { handleSubmit, handleChange, dirty, isSubmitting, values } = props;
-  // console.log("values", values)
-  console.log(props.increment)
-  console.log("firstName", values.firstName)
-
+  const { resetForm, handleChange, dirty, isSubmitting, values } = props;
+  console.log(props)
   
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    const db = firebase.firestore();
+    const userRef = db.collection("users").add({
+      firstName: values.firstName,
+      phoneNumber: Number(values.phoneNumber),
+      time: Date.now()
+    })
+    .then (()=>{ resetForm() })
+    .then( ()=>document.getElementById("homeModal").style.width = "100vw")
+    .catch( err => {
+      alert(err)
+    })
+  }
 
   return (
     <form onSubmit={handleSubmit} className="header__input-container">
@@ -45,7 +56,7 @@ const HomeForm = props => {
         component={inputField}
       />
 
-      <button className="header__button" type="submit"> schedule a ride</button>
+      <button className="header__button" type="submit" style={ { cursor: (isSubmitting || !values.firstName || !values.phoneNumber ) ? "not-allowed": "pointer" } }> schedule a ride</button>
     </form>
   );
 };
@@ -66,14 +77,9 @@ const schema = Yup.object().shape({
 // connect(null, mapDispatchToProps)(HomeForm);
 const initValues = {firstName: "", phoneNumber: ''}
 export default withFormik({
-    enableReinitialize: true,
-    // initialValues: initValues,
+    // enableReinitialize: true,
+    initialValues: initValues,
     mapPropsToValues: ()=> ({firstName: "", phoneNumber: ''}),
-    handleSubmit: (values, props)=>{
-        // return ()=> props.createUser(values)
-        console.log( "i was clicked")
-        props.increment()
-        // return ()=>props.increment;
-    },
+    
   validationSchema: schema
 })(HomeForm);

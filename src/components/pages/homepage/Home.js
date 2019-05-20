@@ -1,12 +1,13 @@
-import React, { Fragment, useEffect, useContext} from "react";
+import React, { Fragment, useState, useEffect, useContext} from "react";
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import { withFormik, Field } from 'formik';
 import Sections from "./sections/Sections.js";
-// import HomeForm from './HomeForm';
+import HomeForm from './HomeForm';
 // import HomeForm from './ReduxForm';
-import OrdForm from './OrdForm';
-import * as modal from './HomeModal';
+// import OrdForm from './OrdForm';
+import * as Modal from './HomeModal';
+
 import { asyncCreateUser, increment } from '../../actionCreators/ActionCreators';
 import { connect } from 'react-redux';
 
@@ -15,13 +16,13 @@ const mapDispatchToProps = {asyncCreateUser, increment};
 
 
 const Home = props => {
+  const [modal, setModal] = useState(false)
   // console.log(props.match.params.id);
   // console.log(props.increment)
   // const { increment } = props;
-
-useEffect(
-  ()=>{props.increment()}, []
-)
+const handleModal = ()=> {
+  setModal(true)
+}
 
 const Context = React.createContext();
   return (
@@ -34,8 +35,10 @@ const Context = React.createContext();
           schedule ride with friends, co-workers and neighbours
         </p>
         
-        <OrdForm createUser={props.asyncCreateUser} />
-        
+        <HomeForm modal={()=>handleModal()} />
+        {/* {modal && <modal.success />} */}
+        <Modal.success />
+                
         {/* <div className="header__input-container">
           <input
             className="header__input"
