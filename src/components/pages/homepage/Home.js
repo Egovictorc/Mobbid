@@ -15,7 +15,6 @@ import { connect } from 'react-redux';
 const mapDispatchToProps = {asyncCreateUser, increment};
 
 
-
 const Home = props => {
   const [modal, setModal] = useState(false)
   // const { increment } = props;
@@ -24,9 +23,8 @@ const handleModal = ()=> {
 }
 
 const [isSending, setSending ] = useState(false);
-
-const handleSending = (x)=>{
-  setSending(x)
+const handleSending = (val)=>{
+  setSending(val)
 }
 
   return (
@@ -43,23 +41,6 @@ const handleSending = (x)=>{
         {/* {modal && <modal.success />} */}
         <Modal.success />
                 
-        {/* <div className="header__input-container">
-          <input
-            className="header__input"
-            type="phone"
-            name="phone"
-            placeholder="Enter Phone Number"
-          />
-          <input
-            className="header__input"
-            type="phone"
-            name="phone"
-            placeholder="Enter Phone Number"
-          />
-
-          <button className="header__button"> schedule a ride</button>
-          
-        </div> */}
       </div>
       {/* <React.Suspense fallback="Loading ...">
             <Sections />

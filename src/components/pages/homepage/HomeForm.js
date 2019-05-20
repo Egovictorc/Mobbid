@@ -5,7 +5,6 @@ import * as Yup from "yup";
 
 let inputField = ({ type, field, label, form: { errors, touched } }) => {
 
-
   return (
     <div className="header__input--div">
       <label>{}</label>
@@ -36,13 +35,10 @@ const [count, setCount] = useState(1)
     e.preventDefault();
     const db = firebase.firestore();
     //CALL SENDING SO AS TO RENDER SENDING REQUEST
-    (isValid) && props.sending(true);
-<<<<<<< HEAD
-    const userRef = db.collection("users").doc(values.firstName).set({
-=======
+    
     if (isValid) {
+      props.sending(true);
       const userRef = db.collection("users").doc(values.firstName).set({
->>>>>>> master
       // firstName: values.firstName,
       // phoneNumber: Number(values.phoneNumber),
       ...values,

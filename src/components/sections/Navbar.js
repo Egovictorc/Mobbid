@@ -3,23 +3,37 @@ import { NavLink, withRouter } from "react-router-dom";
 import Logo from "../../images/mobbid logo.svg";
 import PlayStoreImage from "../../images/download-google-play(1).png";
 
-const NavCollapse = ( {ischecked, handleChecked }) => {
-  
+const NavCollapse = ({ ischecked, handleChecked }) => {
   //TOGGLE NAVIGATION
   useEffect(() => {
-    let v = window.innerWidth;
     // console.log("width ", v)
     let navList = document.getElementById("nav__list");
-    if (ischecked) {
+    let width = window.innerWidth;
+    if (width < 700) {
+      console.log("width ", width);
+      if (ischecked) {
         navList.style.width = "100vw";
-    } else  {
-      
-      ///HERE IS THE PROBLEM
-      navList.style.width = 0;
-    } 
-    // navList.style.width = "auto";
-  
+      } else {
+        ///HERE IS THE PROBLEM
+        navList.style.width = 0;
+      }
+    }
   }, [ischecked]);
+
+  // const [width, setWidth ] = useState(window.innerWidth)
+  // useEffect( ()=>{
+  // //   setWidth(window.innerWidth)
+  // //   console.log("width ", width)
+  // //   let navList = document.getElementById("nav__list");
+  // //     if(width > 800) {
+
+  // //   navList.style.width = "auto";
+  // // }
+  // window.onresize = function(){
+  //   let width = window.innerWidth
+  // }
+
+  // }, [window.onresize])
 
   return (
     <div className="nav__collapse" onClick={handleChecked}>
@@ -45,13 +59,12 @@ const NavCollapse = ( {ischecked, handleChecked }) => {
   );
 };
 
-
 const Navbar = props => {
   const [ischecked, setChecked] = useState(false);
 
   const handleChecked = e => {
     setChecked(!ischecked);
-    console.log("togglechecked", ischecked)
+    console.log("togglechecked", ischecked);
   };
 
   let links = [
@@ -72,7 +85,7 @@ const Navbar = props => {
 
       <NavCollapse ischecked={ischecked} handleChecked={handleChecked} />
       {/* Navigation list */}
-      <ul className="nav__list" id="nav__list" >
+      <ul className="nav__list" id="nav__list">
         {links.map(link => (
           <li className="nav__item" key={link.item}>
             <NavLink className="nav__link" to={link.to} onClick={handleChecked}>
