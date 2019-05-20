@@ -4,10 +4,7 @@ import { connect } from 'react-redux';
 import * as Yup from "yup";
 
 let inputField = ({ type, field, label, form: { errors, touched } }) => {
-//   console.log("error: ", errors);
-//   console.log("touched: ", touched);
-//   console.log("type: ", type);
-//   console.log("label: ", label);
+
 
   return (
     <div className="header__input--div">
@@ -27,8 +24,11 @@ let inputField = ({ type, field, label, form: { errors, touched } }) => {
 
 const HomeForm = props => {
   const { handleSubmit, handleChange, dirty, isSubmitting, values } = props;
-  console.log("values", values)
+  // console.log("values", values)
+  console.log(props.increment)
   console.log("firstName", values.firstName)
+
+  
 
   return (
     <form onSubmit={handleSubmit} className="header__input-container">
@@ -45,7 +45,7 @@ const HomeForm = props => {
         component={inputField}
       />
 
-      <button className="header__button"> schedule a ride</button>
+      <button className="header__button" type="submit"> schedule a ride</button>
     </form>
   );
 };
@@ -64,12 +64,16 @@ const schema = Yup.object().shape({
 //     }
 // }
 // connect(null, mapDispatchToProps)(HomeForm);
-
+const initValues = {firstName: "", phoneNumber: ''}
 export default withFormik({
     enableReinitialize: true,
-    mapPropsToDispatch: (props)=> props,
+    // initialValues: initValues,
+    mapPropsToValues: ()=> ({firstName: "", phoneNumber: ''}),
     handleSubmit: (values, props)=>{
-        props.createUser(values)
+        // return ()=> props.createUser(values)
+        console.log( "i was clicked")
+        props.increment()
+        // return ()=>props.increment;
     },
   validationSchema: schema
 })(HomeForm);

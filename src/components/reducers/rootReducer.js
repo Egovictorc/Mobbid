@@ -1,6 +1,7 @@
 import React from 'react';
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
+import { reduxFirestore, firestoreReducer } from 'redux-firestore';
 
 const initState = {
     // users: [
@@ -8,12 +9,13 @@ const initState = {
     //     {id: "2", firstName: "", lastName: "", workLocation: "", homeLocation: ""},
     //     {id: "3", firstName: "", lastName: "", workLocation: "", homeLocation: ""},
     // ]
+    count: 1,
     users: [
         {id: "1", firstName: "", phoneNumber: ""},
         {id: "2", firstName: "", phoneNumber: ""},
         {id: "3", firstName: "", phoneNumber: ""},
     ],
-    errors: []
+    errors: {}
 }
 
 const rootReducer = (state = initState, action)=> {
@@ -28,6 +30,11 @@ const rootReducer = (state = initState, action)=> {
 
         case "CREATE_USER_ERROR":
         return {...state, errors: [...state.errors, action.payload] };
+
+        case  "CREATE_USER_ERROR":
+        return {...state, error: action.payload }
+        case 'INCREMENT':
+        return { ...state, count: state.count + 1}
         default: 
         return state;
     }
@@ -35,5 +42,6 @@ const rootReducer = (state = initState, action)=> {
 
 export default combineReducers({
     rootReducer,
-    form: formReducer //meant for redux-form
+    form: formReducer, //meant for redux-form
+    firestore: firestoreReducer
 })

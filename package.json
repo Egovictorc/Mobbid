@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@loadable/component": "^5.7.0",
+    "@react-firebase/firestore": "^0.5.4",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "firebase": "^6.0.2",
     "formik": "^1.5.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
