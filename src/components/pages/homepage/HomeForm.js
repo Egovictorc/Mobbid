@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { withFormik, Field } from "formik";
 import firebase from "firebase/app";
 import * as Yup from "yup";
@@ -23,23 +23,34 @@ let inputField = ({ type, field, label, form: { errors, touched } }) => {
 };
 
 const HomeForm = props => {
-  const { resetForm, handleChange, dirty, isSubmitting, values } = props;
-  console.log(props)
-  
+  const { resetForm, handleChange, dirty, isSubmitting, values, isValid } = props;
+  // console.log("home props",  props)
+const [count, setCount] = useState(1)
+
+  const btnStyle = {
+    cursor: (isSubmitting || !values.firstName || !values.phoneNumber ) ? "not-allowed": "pointer" ,
+    title: !isValid ? ("Pls fill in your details correctly"): (null) 
+  }
+
   const handleSubmit = (e)=>{
     e.preventDefault();
     const db = firebase.firestore();
-    const userRef = db.collection("users").add({
-      firstName: values.firstName,
-      phoneNumber: Number(values.phoneNumber),
-      time: Date.now()
-    })
+    //CALL SENDING SO AS TO RENDER SENDING REQUEST
+    (isValid) && props.sending(true);
+    if (isValid) {
+      const userRef = db.collection("users").doc(values.firstName).set({
+      // firstName: values.firstName,
+      // phoneNumber: Number(values.phoneNumber),
+      ...values,
+      Date: Date.now()
+    }, {merge: true})//MERGE IF THE DOC EXISTS
+    .then( ()=> props.sending(false) ) //CALL TO STOP SHOWING SENDING REQUEST
     .then (()=>{ resetForm() })
     .then( ()=>document.getElementById("homeModal").style.width = "100vw")
     .catch( err => {
-      alert(err)
+      console.log(err)
     })
-  }
+  }}
 
   return (
     <form onSubmit={handleSubmit} className="header__input-container">
@@ -56,7 +67,7 @@ const HomeForm = props => {
         component={inputField}
       />
 
-      <button className="header__button" type="submit" style={ { cursor: (isSubmitting || !values.firstName || !values.phoneNumber ) ? "not-allowed": "pointer" } }> schedule a ride</button>
+      <button className="header__button" type="submit" style={ btnStyle }> schedule a ride</button>
     </form>
   );
 };

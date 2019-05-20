@@ -4,6 +4,7 @@ import LazyLoad from 'react-lazyload';
 import { withFormik, Field } from 'formik';
 import Sections from "./sections/Sections.js";
 import HomeForm from './HomeForm';
+import SendingRequest from './SendingRequest';
 // import HomeForm from './ReduxForm';
 // import OrdForm from './OrdForm';
 import * as Modal from './HomeModal';
@@ -17,14 +18,17 @@ const mapDispatchToProps = {asyncCreateUser, increment};
 
 const Home = props => {
   const [modal, setModal] = useState(false)
-  // console.log(props.match.params.id);
-  // console.log(props.increment)
   // const { increment } = props;
 const handleModal = ()=> {
   setModal(true)
 }
 
-const Context = React.createContext();
+const [isSending, setSending ] = useState(false);
+
+const handleSending = (x)=>{
+  setSending(x)
+}
+
   return (
     <Fragment>
       <div className="header">
@@ -35,7 +39,7 @@ const Context = React.createContext();
           schedule ride with friends, co-workers and neighbours
         </p>
         
-        <HomeForm modal={()=>handleModal()} />
+        { isSending ? (<SendingRequest sending={handleSending} />) : (<HomeForm sending={handleSending} />) }
         {/* {modal && <modal.success />} */}
         <Modal.success />
                 
