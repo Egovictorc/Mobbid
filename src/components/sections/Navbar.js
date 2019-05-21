@@ -22,7 +22,7 @@ const NavCollapse = ({ ischecked, handleChecked, width, setWidth }) => {
 
   useEffect(() => {
     let navList = document.getElementById("nav__list");
-    if (width < 700) {
+    if (width <= 701) {
       navList.style.width = 0;
       if (ischecked) {
         handleChecked(false);
