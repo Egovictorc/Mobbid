@@ -5,7 +5,6 @@ import * as Yup from "yup";
 
 let inputField = ({ type, field, label, form: { errors, touched } }) => {
 
-
   return (
     <div className="header__input--div">
       <label>{}</label>
@@ -28,7 +27,7 @@ const HomeForm = props => {
 const [count, setCount] = useState(1)
 
   const btnStyle = {
-    cursor: (isSubmitting || !values.firstName || !values.phoneNumber ) ? "not-allowed": "pointer" ,
+    cursor: (isSubmitting || !isValid ) ? "not-allowed": "pointer" ,
     title: !isValid ? ("Pls fill in your details correctly"): (null) 
   }
 
@@ -36,12 +35,14 @@ const [count, setCount] = useState(1)
     e.preventDefault();
     const db = firebase.firestore();
     //CALL SENDING SO AS TO RENDER SENDING REQUEST
-    (isValid) && props.sending(true);
+    
     if (isValid) {
-      const userRef = db.collection("users").doc(values.firstName).set({
+      props.sending(true);
+      const userRef = db.collection("users").doc(values.phoneNumber).set({
       // firstName: values.firstName,
-      // phoneNumber: Number(values.phoneNumber),
       ...values,
+      //PREVENT IT FROM PUSHING PHONE NUMBER AS STRING
+      phoneNumber: Number(values.phoneNumber),
       Date: Date.now()
     }, {merge: true})//MERGE IF THE DOC EXISTS
     .then( ()=> props.sending(false) ) //CALL TO STOP SHOWING SENDING REQUEST
@@ -71,12 +72,16 @@ const [count, setCount] = useState(1)
     </form>
   );
 };
+//VALIDATION FOR PHONE NUMBER
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
 
 const schema = Yup.object().shape({
   firstName: Yup.string()
-    .required("*First name must not be empty")
-    .min(3, "*Minimum of 3 letters"),
-    phoneNumber: Yup.number().required("* Phone number must not be empty").typeError("* That doesn't look like a phone number")
+    .required("* First name must not be empty")
+    .min(3, "* Minimum of 3 letters"),
+    // phoneNumber: Yup.number().required("* Phone number must not be empty").typeError("* That doesn't look like a phone number").positive("* A phone number can't start with a minus").integer("* A phone number can't include a decimal point")
+    phoneNumber: Yup.string().matches(phoneRegExp, "* Invalid Phone number").required("* Phone number must not be empty")
 });
 
 

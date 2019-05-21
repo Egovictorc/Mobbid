@@ -401,6 +401,7 @@ body {
 }
 .header__input:focus {
   border: 0.1rem solid rgba(85, 153, 40, 0.911);
+  background-color: transparent;
 }
 @media only screen and (max-width: 56.25em) {
   .header__input {

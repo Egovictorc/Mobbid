@@ -87,6 +87,7 @@
 
         &:focus {
             border: .1rem solid rgba(85, 153, 40, 0.911);     
+            background-color: transparent;
         }
         @media only screen and (max-width: $bp-large) {
             font-size: 1.6rem;
