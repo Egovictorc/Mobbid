@@ -399,6 +399,9 @@ body {
   padding-left: var(--padding-side);
   flex: 50% 1 0;
 }
+.header__input:focus {
+  border: 0.1rem solid rgba(85, 153, 40, 0.911);
+}
 @media only screen and (max-width: 56.25em) {
   .header__input {
     font-size: 1.6rem;
@@ -502,6 +505,83 @@ body {
   .header__button {
     margin-top: 2rem;
     border: 1px solid var(--color-secondary);
+  }
+}
+
+.modal {
+  position: relative;
+  padding: 2rem;
+  width: 60%;
+  max-width: 50rem;
+  height: 60vh;
+  max-height: 50rem;
+  background-color: var(--color-secondary);
+  background: radial-gradient(var(--color-secondary), #a1a1a1);
+  border: 0.1rem solid var(--color-secondary);
+  border-radius: 0 7rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal__container {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 0;
+  transition: 0.2s ease;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 15;
+}
+.modal__close {
+  padding: 0.8rem 1rem;
+  color: red;
+  position: relative;
+  font-size: 2rem;
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
+  background-color: transparent;
+  border: 2px dashed #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.modal__close:hover {
+  border: 2px dashed red;
+  color: #fff;
+}
+.modal__message {
+  text-align: center;
+}
+.modal__paragraph {
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.request {
+  color: var(--color-secondary);
+  font-size: 2.4rem;
+}
+@media only screen and (max-width: 43.75em) {
+  .request {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 34.375em) {
+  .request {
+    font-size: 1.8rem;
   }
 }
 
