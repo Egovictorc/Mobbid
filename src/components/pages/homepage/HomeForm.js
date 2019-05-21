@@ -40,8 +40,9 @@ const [count, setCount] = useState(1)
       props.sending(true);
       const userRef = db.collection("users").doc(values.phoneNumber).set({
       // firstName: values.firstName,
-      // phoneNumber: Number(values.phoneNumber),
       ...values,
+      //PREVENT IT FROM PUSHING PHONE NUMBER AS STRING
+      phoneNumber: Number(values.phoneNumber),
       Date: Date.now()
     }, {merge: true})//MERGE IF THE DOC EXISTS
     .then( ()=> props.sending(false) ) //CALL TO STOP SHOWING SENDING REQUEST
