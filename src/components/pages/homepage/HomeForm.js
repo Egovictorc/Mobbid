@@ -27,7 +27,7 @@ const HomeForm = props => {
 const [count, setCount] = useState(1)
 
   const btnStyle = {
-    cursor: (isSubmitting || !values.firstName || !values.phoneNumber ) ? "not-allowed": "pointer" ,
+    cursor: (isSubmitting || !isValid ) ? "not-allowed": "pointer" ,
     title: !isValid ? ("Pls fill in your details correctly"): (null) 
   }
 
@@ -38,7 +38,7 @@ const [count, setCount] = useState(1)
     
     if (isValid) {
       props.sending(true);
-      const userRef = db.collection("users").doc(values.firstName).set({
+      const userRef = db.collection("users").doc(values.phoneNumber).set({
       // firstName: values.firstName,
       // phoneNumber: Number(values.phoneNumber),
       ...values,
@@ -72,11 +72,15 @@ const [count, setCount] = useState(1)
   );
 };
 
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
+
 const schema = Yup.object().shape({
   firstName: Yup.string()
-    .required("*First name must not be empty")
-    .min(3, "*Minimum of 3 letters"),
-    phoneNumber: Yup.number().required("* Phone number must not be empty").typeError("* That doesn't look like a phone number")
+    .required("* First name must not be empty")
+    .min(3, "* Minimum of 3 letters"),
+    // phoneNumber: Yup.number().required("* Phone number must not be empty").typeError("* That doesn't look like a phone number").positive("* A phone number can't start with a minus").integer("* A phone number can't include a decimal point")
+    phoneNumber: Yup.string().matches(phoneRegExp, "* Invalid Phone number").required("* Phone number must not be empty")
 });
 
 

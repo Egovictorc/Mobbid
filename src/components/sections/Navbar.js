@@ -3,37 +3,34 @@ import { NavLink, withRouter } from "react-router-dom";
 import Logo from "../../images/mobbid logo.svg";
 import PlayStoreImage from "../../images/download-google-play(1).png";
 
-const NavCollapse = ({ ischecked, handleChecked }) => {
+const NavCollapse = ({ ischecked, handleChecked, width, setWidth }) => {
+
   //TOGGLE NAVIGATION
   useEffect(() => {
-    // console.log("width ", v)
     let navList = document.getElementById("nav__list");
-    let width = window.innerWidth;
+    setWidth(window.innerWidth);
     if (width < 700) {
-      console.log("width ", width);
+      // console.log("width ", width);
       if (ischecked) {
         navList.style.width = "100vw";
       } else {
-        ///HERE IS THE PROBLEM
+        ///HERE WAS THE PROBLEM //HAS BEEN RESOLVED
         navList.style.width = 0;
       }
     }
   }, [ischecked]);
 
-  // const [width, setWidth ] = useState(window.innerWidth)
-  // useEffect( ()=>{
-  // //   setWidth(window.innerWidth)
-  // //   console.log("width ", width)
-  // //   let navList = document.getElementById("nav__list");
-  // //     if(width > 800) {
-
-  // //   navList.style.width = "auto";
-  // // }
-  // window.onresize = function(){
-  //   let width = window.innerWidth
-  // }
-
-  // }, [window.onresize])
+  useEffect(() => {
+    let navList = document.getElementById("nav__list");
+    if (width < 700) {
+      navList.style.width = 0;
+      if (ischecked) {
+        handleChecked(false);
+      }
+    } else {
+      navList.style.width = "auto";
+    }
+  }, [width]);
 
   return (
     <div className="nav__collapse" onClick={handleChecked}>
@@ -61,10 +58,23 @@ const NavCollapse = ({ ischecked, handleChecked }) => {
 
 const Navbar = props => {
   const [ischecked, setChecked] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  //  CHECK WINDOW WIDTH AND SET WIDTH
+  window.onresize = () => {
+    let newWidth = window.innerWidth;
+    setWidth(newWidth);
+  };
 
   const handleChecked = e => {
-    setChecked(!ischecked);
-    console.log("togglechecked", ischecked);
+    setWidth(window.innerWidth);
+    if (width < 700) {
+      console.log("width ", width);
+      setChecked(!ischecked);
+      console.log("width: ", window.innerWidth);
+    } else {
+      setChecked(false);
+    }
   };
 
   let links = [
@@ -83,7 +93,12 @@ const Navbar = props => {
         <img className="nav__logo" src={Logo} alt="Logo" />
       </div>
 
-      <NavCollapse ischecked={ischecked} handleChecked={handleChecked} />
+      <NavCollapse
+        ischecked={ischecked}
+        width={width}
+        setWidth={setWidth}
+        handleChecked={handleChecked}
+      />
       {/* Navigation list */}
       <ul className="nav__list" id="nav__list">
         {links.map(link => (
