@@ -43,13 +43,13 @@
         align-items: center;
         margin: 1.2rem 0;
         @media only screen and (max-width: $bp-small) {
-            margin: 1.5rem 0 0;
+            // margin: 1.5rem 0 0;
+            
         }
     }
 
     &__item{
         list-style-type: none;
-                
     }
     &__link {
         @extend %first-letter;
@@ -61,14 +61,14 @@
         cursor: pointer;
         @media only screen and (max-width: $bp-xsmall) {
             font-size: var(--font-xsmall);
-            padding: .8rem 1rem;
+            padding: .6rem .5rem;
         }
 
         &--social {
             padding: 0 var(--padding-xs);
             @media only screen and (max-width: $bp-xsmall) {
                 font-size: var(--font-xsmall);
-                padding: 0 1rem;
+                padding: 0 .6rem;
             }
         }
    

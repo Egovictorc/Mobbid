@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 const Blog = (props) => {
-console.log(props.histroy)
+// console.log(props.histroy)
 
     useEffect( ()=> {
         setTimeout(()=>{
@@ -10,7 +10,7 @@ console.log(props.histroy)
     },[])
 
     return (
-        <div>
+        <div className="blog">
             <h1 className="blog__heading"> our blog</h1>
             <div className="relax">
         <span className="relax__rotate" />

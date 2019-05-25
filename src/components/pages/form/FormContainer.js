@@ -1,8 +1,16 @@
 import React from "react";
 import FormFormik from "./FormFormik";
-import traffic from "../../images/traffic.png";
+import traffic from "../../../images/traffic.png";
+import { connect } from 'react-redux';
+
+const mapStateToProps = (state)=> {
+  const { users } = state.rootReducer;
+  return users[0]
+}
+
 
 const FormContainer = props => {
+console.log("form_container: ", props)
 
   return (
     <div className="getRide getRide--cont">
@@ -17,11 +25,13 @@ const FormContainer = props => {
       </div>
 
       <div className="getRide__img--cont">
-        <img src={traffic} alt="traffic" className="getRide__img" />
+        {/* <img src={traffic} alt="traffic" className="getRide__img" /> */}
       </div>
 
     </div>
   );
 };
 
-export default FormContainer;
+
+
+export default connect(mapStateToProps)(FormContainer);

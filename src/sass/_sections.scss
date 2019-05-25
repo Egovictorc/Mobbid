@@ -311,8 +311,13 @@
 
 .about,
 .contact,
+.customer,
+.works,
 .blog {
+    min-height: calc(100vh - 6rem);
+
     &__heading {
+        margin-top: 4rem;
         text-align: center;
         text-transform: capitalize;
         color: var(--color-secondary);
@@ -330,10 +335,10 @@
     align-items: center;
 
     &__rotate {
-        width: 7rem;
-        height: 7rem;
+        width: 9rem;
+        height: 9rem;
         display: block;
-        border: .7rem solid var(--color-secondary);
+        border: 1rem solid var(--color-secondary);
         border-right: dotted var(--color-secondary);
         border-radius: 50%;
         animation: rotate-circle;
