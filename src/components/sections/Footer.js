@@ -5,6 +5,7 @@ import Logo from "../../images/logo_bgWhite.png";
 import Facebook from "../../images/facebook2 2.png";
 import Twitter from "../../images/twitter.png";
 import Instagram from "../../images/instagram(1).png";
+// import Instagram from "../../images/instagram-2.png";
 
 const Footer = () => {
   let socialLinks = [
