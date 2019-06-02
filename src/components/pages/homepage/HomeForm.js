@@ -46,7 +46,7 @@ const [count, setCount] = useState(1)
       Date: Date.now()
     }, {merge: true})//MERGE IF THE DOC EXISTS
     .then( ()=> props.sending(false) ) //CALL TO STOP SHOWING SENDING REQUEST
-    .then (()=>{ resetForm() })
+    .then (()=> resetForm() )
     .then( ()=>document.getElementById("homeModal").style.width = "100vw")
     .catch( err => {
       console.log(err)

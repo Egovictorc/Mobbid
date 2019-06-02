@@ -48,6 +48,10 @@
         @media only screen and (max-width: $bp-small) {
             font-size: 3.6rem;
             max-width: 90%;
+            margin-top: 2rem;
+        } 
+        @media only screen and (max-width: $bp-xsmall) {
+            
         } 
     }
 
@@ -86,7 +90,8 @@
         flex: 50% 1 0;
 
         &:focus {
-            border: .1rem solid rgba(85, 153, 40, 0.911);     
+            border: .1rem solid var(--color-secondary);
+            color: #e1e1e1;
             background-color: transparent;
         }
         @media only screen and (max-width: $bp-large) {
