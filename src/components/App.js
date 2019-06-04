@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import Footer from "./sections/Footer";
 import '../css/style.css';
 import FormPage from "./pages/form/FormContainer";
+import ErrorBoundary from './ErrorBoundary';
 
 
 const App = () => {
@@ -28,7 +29,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="container">
+        <ErrorBoundary>
         <Navbar />
+        </ErrorBoundary>
         <Switch>
 
           {
