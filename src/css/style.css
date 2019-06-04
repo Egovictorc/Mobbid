@@ -203,12 +203,14 @@ body {
   cursor: pointer;
   font-size: var(--font-link);
   color: var(--color-grey-light);
-  display: inline-block;
   transition: 0.3s ease all;
   background-image: linear-gradient(105deg, #fff 50%, transparent 50%);
   background-position: 0;
   background-repeat: no-repeat;
   background-size: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 @media only screen and (max-width: 43.75em) {
   .nav__link {
@@ -316,6 +318,23 @@ body {
 
 .active {
   color: var(--color-secondary);
+}
+
+.nav__ind {
+  display: inline-block;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-secondary);
+  transition: 0.3s ease all;
+}
+@media only screen and (max-width: 43.75em) {
+  .nav__ind {
+    display: none;
+  }
+}
+
+.nav__item .nav__link:hover .nav__ind {
+  width: 100%;
 }
 
 .header {
@@ -454,7 +473,6 @@ body {
 }
 @media only screen and (max-width: 25em) {
   .header__input-container {
-    max-width: 90%;
     min-height: 10rem;
     align-items: center;
   }
@@ -486,8 +504,6 @@ body {
   display: inline-block;
   font-size: var(--font-medium);
   transition: 0.4s ease;
-  background-color: transparent;
-  border: 1px solid var(--color-secondary);
 }
 @media only screen and (max-width: 43.75em) {
   .header__button {
@@ -496,7 +512,6 @@ body {
 }
 .header__button:hover {
   color: #fff;
-  background-color: var(--color-secondary);
 }
 @media only screen and (max-width: 43.75em) {
   .header__button {
@@ -1157,6 +1172,12 @@ body {
   transition: 0.3s ease all;
   cursor: pointer;
 }
+.footer__link--pages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+}
 @media only screen and (max-width: 25em) {
   .footer__link {
     font-size: var(--font-xsmall);
@@ -1182,6 +1203,23 @@ body {
 .footer__instagram {
   width: 2.5rem;
   height: 2.6rem;
+}
+
+.footer__ind {
+  display: inline-block;
+  width: 0;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.3s ease all;
+}
+@media only screen and (max-width: 43.75em) {
+  .footer__ind {
+    display: none;
+  }
+}
+
+.footer__item .footer__link:hover .footer__ind {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

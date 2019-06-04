@@ -134,7 +134,7 @@
 
             @media only screen and (max-width: $bp-xsmall) {
                 
-                max-width: 90%;
+                // max-width: 90%;
                 min-height: 10rem;
                 align-items: center;
                 
@@ -179,8 +179,8 @@
         @extend %first-letter;
 
         ///START HERE TO STYLE BUTTON
-        background-color: transparent;
-        border: 1px solid var(--color-secondary);
+        // background-color: transparent;
+        // border: 1px solid var(--color-secondary);
         @media only screen and (max-width: $bp-medium) {
             
             margin: 0 auto;
@@ -189,7 +189,7 @@
         &:hover {
             // color: var(--color-grey-light);
             color: #fff;
-            background-color: var(--color-secondary);
+            // background-color: var(--color-secondary);
         }
 
         @media only screen and (max-width: $bp-medium) {

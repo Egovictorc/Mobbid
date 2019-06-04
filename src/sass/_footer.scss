@@ -59,11 +59,19 @@
         display: inline-block;
         transition: .3s ease all;
         cursor: pointer;
+
+        &--pages {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-transform: capitalize;
+        }
         @media only screen and (max-width: $bp-xsmall) {
             font-size: var(--font-xsmall);
             padding: .6rem .5rem;
         }
 
+        
         &--social {
             padding: 0 var(--padding-xs);
             @media only screen and (max-width: $bp-xsmall) {
@@ -91,4 +99,21 @@
 .footer__instagram {
     width: 2.5rem;
     height: 2.6rem;   
+}
+
+// HERE
+.footer__ind {
+    display: inline-block;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: .3s ease all;
+
+    @media only screen and (max-width: $bp-medium){
+        display: none;
+    }
+}
+
+.footer__item .footer__link:hover .footer__ind {
+    width: 100%;
 }

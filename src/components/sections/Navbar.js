@@ -108,7 +108,11 @@ const Navbar = props => {
             <NavLink className="nav__link" to={link.to} onClick={handleChecked}>
               {" "}
               {link.item}{" "}
+              <span className="nav__ind"> </span>
             </NavLink>{" "}
+
+            {/* HERE */}
+            
           </li>
         ))}
       </ul>
