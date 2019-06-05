@@ -11,6 +11,7 @@ import * as Modal from './HomeModal';
 
 import { asyncCreateUser, increment } from '../../actionCreators/ActionCreators';
 import { connect } from 'react-redux';
+import ErrorBoundary from '../../ErrorBoundary';
 
 const mapDispatchToProps = {asyncCreateUser, increment};
 
@@ -28,7 +29,8 @@ const handleSending = (val)=>{
 }
 
   return (
-    <Fragment>
+     <Fragment>
+      <ErrorBoundary>
       <div className="header">
         <h1 className="header__heading ">
           comfort and convenience on rides to work
@@ -49,7 +51,8 @@ const handleSending = (val)=>{
       <LazyLoad height={70}>
         <Sections />
       </LazyLoad>
-
+      
+      </ErrorBoundary>
     </Fragment>
   );
 };

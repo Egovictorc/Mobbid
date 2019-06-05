@@ -9,7 +9,9 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        // HERE
         width: 0;
+        // width: 100%;
         transition: .2s ease;
         position: fixed;
         left: 0;
@@ -23,8 +25,12 @@
     max-width: 50rem;
     height: 60vh;
     max-height: 50rem;
-    background-color: var(--color-secondary);
-    background: radial-gradient(var(--color-secondary), #a1a1a1);
+
+    // HERE
+    // background-color: var(--color-secondary);
+    // background: radial-gradient(var(--color-secondary), #a1a1a1);
+    background-color: #e1e1e1;
+    color: var(--color-secondary);
     border: .1rem solid var(--color-secondary);
     border-radius: 0 7rem;
     margin: 0 auto;
@@ -33,24 +39,32 @@
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-width: $bp-small){
+        width: 88%;
+    }
+    @media only screen and (max-width: $bp-xsmall){
+        width: 94%;
+    }
+
     &__close {
         padding: .8rem 1rem;
         color: red;
         position: relative;
-        font-size: 2rem;
+        font-size: 2.4rem;
         position: absolute;
         top: 2rem;
         right: 4rem;
         background-color: transparent;
-        border: 2px dashed #fff;
+        // border: 2px dashed #fff;
         border-radius: 50%;
         cursor: pointer;
         transition: .3s ease;
 
-        &:hover {
-            border: 2px dashed red;
-            color: #fff;
-        }
+        // HERE
+        // &:hover {
+        //     border: 2px dashed red;
+        //     color: #fff;
+        // }
     }
     &__message {
         // margin: 0 auto;

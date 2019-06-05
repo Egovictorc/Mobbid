@@ -13,6 +13,7 @@ const NavCollapse = ({ ischecked, handleChecked, width, setWidth }) => {
       // console.log("width ", width);
       if (ischecked) {
         navList.style.width = "100vw";
+        
       } else {
         ///HERE WAS THE PROBLEM //HAS BEEN RESOLVED
         navList.style.width = 0;
@@ -35,8 +36,8 @@ const NavCollapse = ({ ischecked, handleChecked, width, setWidth }) => {
   return (
     <div className="nav__collapse" onClick={handleChecked}>
       {/* Toggle navigation bg */}
-      <div className="nav__collapse-bg" />
-
+      
+      
       {/* //Toggle navigation menu */}
       <input
         type="checkbox"
@@ -44,7 +45,7 @@ const NavCollapse = ({ ischecked, handleChecked, width, setWidth }) => {
         onChange={handleChecked}
         className="nav__toggler"
       />
-
+      <div className="nav__collapse--bg" ></div>
       {/* Navigation icon */}
       <div className="nav__collapse--icon-cont">
         <span className="nav__collapse--icon" />
@@ -86,7 +87,8 @@ const Navbar = props => {
     ///TESTING FORM COMPONENT
     { to: "/form/FormPage/", item: "form" }
   ];
-  console.log(props);
+  // console.log(props);
+
   return (
     <div className="nav">
       <div className="nav__logo-container">
@@ -106,7 +108,11 @@ const Navbar = props => {
             <NavLink className="nav__link" to={link.to} onClick={handleChecked}>
               {" "}
               {link.item}{" "}
+              <span className="nav__ind"> </span>
             </NavLink>{" "}
+
+            {/* HERE */}
+            
           </li>
         ))}
       </ul>
