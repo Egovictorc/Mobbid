@@ -1,10 +1,14 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import LazyLoad from 'react-lazyload';
 import { withRouter, Link } from 'react-router-dom';
-import Phone from "../../../../images/phone.png";
+//IMPORT IPHONE IMAGES
+import iphone1x from "../../../../images/iphone@1x.png";
+import iphone2x from "../../../../images/iphone@2x.png";
+// import iphone3x from "../../../../images/iphone@3x.png";
 
 const Definition = props=> {
-    
+
+
     let articles = [ 
         { class: "article article__social", 
         heading: "social carpooling", 
@@ -34,7 +38,10 @@ const Definition = props=> {
 
             <div className="defn__img-container">
                 <LazyLoad height={100} offset={50}>
-                <img className="defn__img" src={Phone} alt="Phone-img" />
+                <img className="defn__img" 
+                srcSet={ `${iphone2x} 1256w, ${iphone1x} 628w`}
+            sizes="(min-width: 550px), (max-width: 549px)" 
+                src={iphone1x} alt="Mobbid iPhone" />
                 </LazyLoad>
             </div>
         </section>

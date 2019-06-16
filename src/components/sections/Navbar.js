@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import Logo from "../../images/mobbid logo.svg";
-import PlayStoreImage from "../../images/download-google-play(1).png";
+import PlayStoreImage from "../../images/google-play@1x.png";
 
 const NavCollapse = ({ ischecked, handleChecked, width, setWidth }) => {
 
@@ -90,7 +90,7 @@ const Navbar = props => {
   // console.log(props);
 
   return (
-    <div className="nav">
+    <nav className="nav">
       <div className="nav__logo-container">
         <img className="nav__logo" src={Logo} alt="Logo" />
       </div>
@@ -124,7 +124,7 @@ const Navbar = props => {
           alt="playstore-img"
         />
       </div>
-    </div>
+    </nav>
   );
 };
 

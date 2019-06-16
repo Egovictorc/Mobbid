@@ -31,7 +31,7 @@ const handleSending = (val)=>{
   return (
      <Fragment>
       <ErrorBoundary>
-      <div className="header">
+      <header className="header">
         <h1 className="header__heading ">
           comfort and convenience on rides to work
         </h1>
@@ -43,7 +43,7 @@ const handleSending = (val)=>{
         {/* {modal && <modal.success />} */}
         <Modal.success />
                 
-      </div>
+      </header>
       {/* <React.Suspense fallback="Loading ...">
             <Sections />
       </React.Suspense> */}

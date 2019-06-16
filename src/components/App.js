@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Helmet from 'react-helmet';
 import Navbar from "./sections/Navbar";
 import Home from "./pages/homepage/Home";
 import About from "./pages/About";
@@ -29,6 +30,24 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="container">
+        {/* FOR HTML HEAD META TAGS */}
+      {/* <Helmet title="Mobbid" meta={ [ 
+          {name: 'description', content: 'mobbid ng, mobbid app, mobbid ride'},
+        {name: 'keywords', content: 'mobbid ng, mobbid ride, mobbid'},
+        {name: 'author', content: 'Ego victor, Anelechi chiebuka' } ] } link={[
+          {rel: 'preload', href: 'static/media/nunito-v10-latin-700.eot?#iefix', as: 'font'},
+          {rel: 'preload', href: "static/media/nunito-v10-latin-regular.woff2", as: 'font', type: "font/woff2"},
+          {rel: 'preload', href: "static/media/nunito-v10-latin-600.woff2", as: 'font', type: "font/woff2"},
+          {rel: 'preload', href: "static/media/nunito-v10-latin-700.woff2", as: 'font', type: "font/woff2"}, */}
+          {/* {rel: 'preload', href: './css/style.css', as: 'style'}, */}
+        {/* ]} />  */}
+
+        {/* <Helmet>
+          <title>Title</title>
+          <meta name="author" content="ego" />
+          <meta name="description" content="ego" />
+        </Helmet> */}
+
         <ErrorBoundary>
         <Navbar />
         </ErrorBoundary>

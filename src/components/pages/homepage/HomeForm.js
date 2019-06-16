@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { withFormik, Field } from "formik";
 import firebase from "firebase/app";
 import * as Yup from "yup";
+import { moment } from 'moment';
 
 let inputField = ({ type, field, label, form: { errors, touched } }) => {
 
   return (
     <div className="header__input--div">
-      <label>{}</label>
+      {/* hide labels */}
+      <label style= { {display: "none"} }>{label}</label>
       <div>
         <input
           type={type}
@@ -43,13 +45,15 @@ const [count, setCount] = useState(1)
       ...values,
       //PREVENT IT FROM PUSHING PHONE NUMBER AS STRING
       phoneNumber: Number(values.phoneNumber),
-      Date: Date.now()
+      // Date: Date.now()
+      Date: moment().format("dddd Do, MMMM YYYY"),
+      Time: moment().format('h:mm:ss A')
     }, {merge: true})//MERGE IF THE DOC EXISTS
     .then( ()=> props.sending(false) ) //CALL TO STOP SHOWING SENDING REQUEST
     .then (()=> resetForm() )
     .then( ()=>document.getElementById("homeModal").style.width = "100vw")
     .catch( err => {
-      console.log(err)
+      // console.log(err)
     })
   }}
 

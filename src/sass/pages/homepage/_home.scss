@@ -15,6 +15,10 @@
     align-items: center;
     color: #fff;
 
+    @media only screen and (max-width: $bp-small) {
+        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .2)), url("../images/bg@1x.png");
+    }
+
     & > *:not(:last-child) {
         margin-bottom: 6vh;
 
@@ -84,13 +88,13 @@
         min-width: 22rem;
         border: .1rem solid var(--color-secondary);     
         font-size: var(--font-small);
-        color: var(--color-secondary);
+        // color: var(--color-secondary);
         max-width: 60%;
         padding-left: var(--padding-side);
         flex: 50% 1 0;
 
         &:focus {
-            border: .1rem solid var(--color-secondary);
+            // border: .1rem solid var(--color-secondary);
             color: #e1e1e1;
             background-color: transparent;
         }
