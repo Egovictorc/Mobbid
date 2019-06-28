@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#env variables
+.env
+#original fbconfig backup
+fbConfig.txt

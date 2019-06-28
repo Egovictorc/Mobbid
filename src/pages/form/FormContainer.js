@@ -12,7 +12,7 @@ const mapStateToProps = (state)=> {
 
 
 const FormContainer = props => {
-console.log("form_container: ", props)
+// console.log("form_container: ", props)
 
   return (
     <Layout title="Get Ride">

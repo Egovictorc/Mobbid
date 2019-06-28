@@ -5,73 +5,86 @@ import Cached from "@material-ui/icons/Cached";
 // import Navbar from "./components/sections/Navbar";
 
 
+
 import Home from "./pages/homepage/Home";
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
-// import Blog from "./pages/Blog";
-// import Works from "./pages/Works";
-// import Customer from "./pages/Customer";
-// import NotFound from "./pages/NotFound";
-// import Footer from "./components/sections/Footer";
-// import './css/style.css';
-import './sass/main.scss';
+
+// START HERE 
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Works from "./pages/Works";
+import Customer from "./pages/Customer";
+import NotFound from "./pages/NotFound";
+
 // import FormPage from "./pages/form/FormContainer";
+import FormPage from "./pages/form/FormContainer";
+// import './css/style.css';
+
+// STOP HERE
+
+// Use SASS for Styling instead of CSS
+import './sass/main.scss';
+
 import ErrorBoundary from './components/ErrorBoundary';
 
-const Loading = (props)=> {
-  if(props.error){
-    return <div> Error loading page</div>
-  } else if(props.timedOut) {
-    return <div> connection timed out</div>
-  } else if (props.delayPass){
-    return <div> loading ...</div>
-  }else {
-    return <div>loading ... <Cached /></div>
-  }
-}
+// START HERE FOR CODE SPLITTING
+// const Loading = (props)=> {
+//   if(props.error){
+//     return <div> Error loading page</div>
+//   } else if(props.timedOut) {
+//     return <div> connection timed out</div>
+//   } else if (props.delayPass){
+//     return <div> loading ...</div>
+//   }else {
+//     return <div>loading ... <Cached /></div>
+//   }
+// }
 
-// No need to delay importing the home page
-// const Home = Loadable( {
-//   loader: ()=> import("./pages/homepage/Home"),
+// // No need to delay importing the home/ Landing page
+// // const Home = Loadable( {
+// //   loader: ()=> import("./pages/homepage/Home"),
+// //   loading: Loading,
+// //   // delay: 5000
+// // })
+
+// const About = Loadable({
+//   loader: ()=> import(`./pages/About`),
+//   loading: Loading,
+//   // delay: 5000
+// })
+// const Contact = Loadable({
+//   loader: ()=> import(`./pages/Contact`),
+//   loading: Loading,
+//   // delay: 5000
+// })
+// const Blog = Loadable({
+//   loader: ()=> import(`./pages/Blog`),
+//   loading: Loading,
+//   // delay: 5000
+// })
+// const Works = Loadable({
+//   loader: ()=> import(`./pages/Works`),
+//   loading: Loading,
+//   // delay: 5000
+// })
+// const NotFound = Loadable({
+//   loader: ()=> import(`./pages/NotFound`),
+//   loading: Loading,
+//   // delay: 5000
+// })
+// const Customer = Loadable({
+//   loader: ()=> import(`./pages/Customer`),
+//   loading: Loading,
+//   // delay: 5000
+// })
+// const FormPage = Loadable({
+//   loader: ()=> import(`./pages/form/FormContainer`),
 //   loading: Loading,
 //   // delay: 5000
 // })
 
-const About = Loadable({
-  loader: ()=> import(`./pages/About`),
-  loading: Loading,
-  // delay: 5000
-})
-const Contact = Loadable({
-  loader: ()=> import(`./pages/Contact`),
-  loading: Loading,
-  // delay: 5000
-})
-const Blog = Loadable({
-  loader: ()=> import(`./pages/Blog`),
-  loading: Loading,
-  // delay: 5000
-})
-const Works = Loadable({
-  loader: ()=> import(`./pages/Works`),
-  loading: Loading,
-  // delay: 5000
-})
-const NotFound = Loadable({
-  loader: ()=> import(`./pages/NotFound`),
-  loading: Loading,
-  // delay: 5000
-})
-const Customer = Loadable({
-  loader: ()=> import(`./pages/Customer`),
-  loading: Loading,
-  // delay: 5000
-})
-const FormPage = Loadable({
-  loader: ()=> import(`./pages/form/FormContainer`),
-  loading: Loading,
-  // delay: 5000
-})
+// STOP HERE
+
 
 const App = () => {
 
@@ -85,9 +98,9 @@ const App = () => {
   //   {path: "/form/FormPage/", component: FormPage},
   // ]
 
-  useEffect( ()=> {
-    Loadable.preloadReady()
-  }, [])
+  // useEffect( ()=> {
+  //   Loadable.preloadReady()
+  // }, [])
   return (
     <BrowserRouter>
       <div className="container">
