@@ -75,10 +75,14 @@
         flex-direction: column;
         justify-content: center;
 
+        // align-items: center;
+
 
         @media only screen and (max-width: $bp-medium) {
             font-size: 1.6rem;
             padding: var(--padding-xs);
+            flex-direction: row;
+            align-items: center;
             // background-color: blue;
         }
 
@@ -95,6 +99,10 @@
         }
     }
 
+    // STYLE FOR MATERIALIZE ICONS did not work here
+    // &__i {
+    //     display: none;
+    // }
     // HERE NAVIGATION INDICATOR
     &__ind {
         display: inline-block;

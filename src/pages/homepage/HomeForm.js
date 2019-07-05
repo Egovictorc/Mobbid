@@ -9,7 +9,8 @@ let inputField = ({ type, field, label, form: { errors, touched } }) => {
   return (
     <div className="header__input--div">
       {/* hide labels */}
-      <label style= { {display: "none"} }>{label}</label>
+      {/* <label style= { {display: "none"} }>{label}</label> */}
+      <label style= { {width: 0, height: 0, overflow: "hidden"} }>{label}</label>
       <div>
         <input
           type={type}
