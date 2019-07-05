@@ -3,6 +3,14 @@ import { NavLink, withRouter } from "react-router-dom";
 import Logo from "../images/mobbid logo.svg";
 import PlayStoreImage from "../images/google-play@1x.png";
 
+// MATERIALIZE ICONS
+import Home from "@material-ui/icons/Home";
+import SettingsRemote from "@material-ui/icons/SettingsRemote";
+import Mail from "@material-ui/icons/Mail";
+import Book from "@material-ui/icons/Book";
+import RecentActors from "@material-ui/icons/RecentActors";
+import SentimentVerySatisfied from "@material-ui/icons/SentimentVerySatisfied";
+
 const NavCollapse = ({ ischecked, handleChecked, width, setWidth }) => {
 
   //TOGGLE NAVIGATION
@@ -79,13 +87,13 @@ const Navbar = props => {
   };
 
   let links = [
-    { to: "/", item: "home" },
-    { to: "/works/", item: "how it works" },
-    { to: "/customer/", item: "customer stories" },
-    { to: "/about/", item: "about us" },
-    { to: "/blog/", item: "blog" },
+    { to: "/", item: "home", icon: Home },
+    { to: "/works/", item: "how it works", icon: SettingsRemote },
+    { to: "/customer/", item: "customer stories", icon:  SentimentVerySatisfied},
+    { to: "/about/", item: "about us", icon: RecentActors },
+    { to: "/blog/", item: "blog", icon: Book },
     ///TESTING FORM COMPONENT
-    { to: "/formPage/", item: "form" }
+    { to: "/formPage/", item: "form", icon: Book }
   ];
   // console.log(props);
 
@@ -107,7 +115,7 @@ const Navbar = props => {
           <li className="nav__item" key={link.item}>
             <NavLink className="nav__link" to={link.to} onClick={handleChecked}>
               {" "}
-              {link.item}{" "}
+              <link.icon className="nav__i" style={ {display: (width < 700) ? "inlineBlock": "none", marginRight: "3px", fontSize: "2rem"} } />{link.item}{" "}
               <span className="nav__ind"> </span>
             </NavLink>{" "}
 
