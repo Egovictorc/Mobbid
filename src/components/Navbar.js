@@ -113,7 +113,7 @@ const Navbar = props => {
       <ul className="nav__list" id="nav__list">
         {links.map(link => (
           <li className="nav__item" key={link.item}>
-            <NavLink className="nav__link" to={link.to} onClick={handleChecked}>
+            <NavLink className="nav__link" activeClassName="nav__link--active" exact to={link.to} onClick={handleChecked}>
               {" "}
               <link.icon className="nav__i" style={ {display: (width < 700) ? "inlineBlock": "none", marginRight: "3px", fontSize: "2rem"} } />{link.item}{" "}
               <span className="nav__ind"> </span>

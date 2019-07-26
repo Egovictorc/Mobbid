@@ -20,6 +20,8 @@ const mapDispatchToProps = {asyncCreateUser, increment};
 
 
 const Home = props => {
+  
+
   const [modal, setModal] = useState(false)
   
 const handleModal = ()=> {

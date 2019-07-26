@@ -10,7 +10,7 @@ let inputField = ({ type, field, label, form: { errors, touched } }) => {
     <div className="header__input--div">
       {/* hide labels */}
       {/* <label style= { {display: "none"} }>{label}</label> */}
-      <label style= { {width: 0, height: 0, overflow: "hidden"} }>{label}</label>
+      <label style= { {display: "none"} }>{label}</label>
       <div>
         <input
           type={type}
@@ -96,11 +96,13 @@ const schema = Yup.object().shape({
 //     }
 // }
 // connect(null, mapDispatchToProps)(HomeForm);
-const initValues = {firstName: "", phoneNumber: ''}
+// const initValues = {firstName: "", phoneNumber: ''};
+
 export default withFormik({
     // enableReinitialize: true,
-    initialValues: initValues,
+    // initialValues: initValues, (This has no effect on withFormik HOC)
     mapPropsToValues: ()=> ({firstName: "", phoneNumber: ''}),
+    displayName: "HomeForm",
     
   validationSchema: schema
 })(HomeForm);

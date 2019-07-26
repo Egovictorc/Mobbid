@@ -41,7 +41,8 @@
             width: 0;
             overflow: hidden;
             // background-color: red;
-            background-image: radial-gradient(#136b9e 25%, #6d31b1e0);
+            // background-image: radial-gradient(#136b9e 25%, #6d31b1e0);
+            background-image: linear-gradient( rgba(0,0,0,.98) 25%, rgba(0,0,0,.93));
             justify-content: center;
             align-items: center;
         }
@@ -77,6 +78,10 @@
 
         // align-items: center;
 
+        // ACTIVE NAVLINS
+        &--active {
+            color: var(--color-secondary);
+        }
 
         @media only screen and (max-width: $bp-medium) {
             font-size: 1.6rem;
@@ -228,8 +233,8 @@
 
 
 
-// ////THIS ACTIVE CLASS wAS AUTOMATICALLY PLACED BY REACT NAVLINK
-.active {
-    // color: var(--color-grey-light);
-    color: var(--color-secondary);
-}
+
+// .activeNavlink {
+//     // color: var(--color-grey-light);
+//     color: var(--color-secondary);
+// }
