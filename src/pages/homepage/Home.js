@@ -29,6 +29,7 @@ const handleModal = ()=> {
 }
 
 const [isSending, setSending ] = useState(false);
+
 const handleSending = (val)=>{
   setSending(val)
 }

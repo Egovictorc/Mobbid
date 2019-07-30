@@ -1,0 +1,21 @@
+// ANIMATION FOR WORKS SECTION
+@keyframes move-y {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        // background-color: blue;
+    }
+}
+
+%move-y {
+    animation-name: move-y;
+    animation-delay: .5s;
+    animation-duration: .8s;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+}

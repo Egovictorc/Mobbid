@@ -114,12 +114,14 @@
         }
     }
 
-
     &__div {
         max-width: 80rem;
         margin: 0 auto calc(4 * var(--margin-medium));
         display: flex;
         justify-content: space-between;
+        
+        // ADD VERTICAL ANIMATION
+        @extend %move-y;
 
         @media only screen and (max-width: $bp-small) {
             flex-direction: column;
@@ -148,9 +150,9 @@
         object-fit: contain;
     }
 
-    &__order--1 {
-        @media only screen and (max-width: $bp-small) {
-            order: 1;
+    &__order--0 {
+        @media only screen and (min-width: $bp-small) {
+            order: -1;
         }
     }
 }
@@ -173,8 +175,7 @@
         width: 100%;
         max-width: 118rem;
         margin: 0 auto;
-        ;
-
+        
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
