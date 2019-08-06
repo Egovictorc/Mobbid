@@ -26,3 +26,4 @@ yarn-error.log*
 .env
 #original fbconfig backup
 fbConfig.txt
+package-lock.json
