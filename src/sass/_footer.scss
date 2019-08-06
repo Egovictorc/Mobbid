@@ -11,6 +11,7 @@
         //padding: var(--margin-medium) .7rem;
         font-size: 1.8rem;
     }
+
     @media only screen and (max-width: $bp-small) {
         padding: var(--margin-medium) 1rem;
         font-size: 1.6rem;
@@ -18,9 +19,9 @@
 
     &__div {
         display: flex;
-        justify-content: space-between; 
-        align-items: center;   
-                
+        justify-content: space-between;
+        align-items: center;
+
         &--link {
             @media only screen and (max-width: $bp-medium) {
                 flex-direction: column;
@@ -35,22 +36,24 @@
     &__logo {
         height: 100%;
         object-fit: contain;
-        
+
     }
 
-    &__list{
+    &__list {
         display: flex;
         align-items: center;
         margin: 1.2rem 0;
+
         @media only screen and (max-width: $bp-small) {
             // margin: 1.5rem 0 0;
-            
+
         }
     }
 
-    &__item{
+    &__item {
         list-style-type: none;
     }
+
     &__link {
         @extend %first-letter;
         color: #fff;
@@ -66,30 +69,48 @@
             justify-content: center;
             text-transform: capitalize;
         }
+
         @media only screen and (max-width: $bp-xsmall) {
             font-size: var(--font-xsmall);
             padding: .6rem .5rem;
         }
 
-        
+
         &--social {
             padding: 0 var(--padding-xs);
+
             @media only screen and (max-width: $bp-xsmall) {
                 font-size: var(--font-xsmall);
                 padding: 0 .6rem;
             }
         }
-   
+
         &:hover,
-        &:active
-         {
+        &:active {
             color: var(--color-grey-light);
         }
     }
 
+    // HERE
+    &__ind {
+        display: inline-block;
+        width: 0;
+        height: 3px;
+        background-color: #fff;
+        transition: .3s ease all;
+
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
+    }
+
+    &__item &__link:hover &__ind {
+        width: 100%;
+    }
+
     &__par {
         padding: var(--padding-xs);
-        
+
     }
 }
 
@@ -98,22 +119,37 @@
 
 .footer__instagram {
     width: 2.5rem;
-    height: 2.6rem;   
+    height: 2.6rem;
 }
 
-// HERE
-.footer__ind {
-    display: inline-block;
-    width: 0;
-    height: 3px;
+.footer__mail-container {
+    font-size: 2.8rem;
     background-color: #fff;
+    color: var(--color-secondary);
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
     transition: .3s ease all;
 
-    @media only screen and (max-width: $bp-medium){
-        display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        right: 4rem;
+    }
+    @media only screen and (max-width: $bp-small) {
+        right: 3rem;
+    }
+    &:hover {
+        background-color: #f1f1f1;
     }
 }
 
-.footer__item .footer__link:hover .footer__ind {
-    width: 100%;
+.footer__mail {
+    
 }

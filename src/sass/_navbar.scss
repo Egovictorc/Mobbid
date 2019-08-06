@@ -41,7 +41,8 @@
             width: 0;
             overflow: hidden;
             // background-color: red;
-            background-image: radial-gradient(#136b9e 25%, #6d31b1e0);
+            // background-image: radial-gradient(#136b9e 25%, #6d31b1e0);
+            background-image: linear-gradient( rgba(0,0,0,.98) 25%, rgba(0,0,0,.93));
             justify-content: center;
             align-items: center;
         }
@@ -49,7 +50,7 @@
 
     &__item {
         list-style-type: none;
-        
+
         @media only screen and (max-width: $bp-medium) {
             margin-bottom: 2rem;
         }
@@ -70,26 +71,58 @@
         background-repeat: no-repeat;
         background-size: 0%;
 
-           // FROM HERE
-           display: flex;
-           flex-direction: column;
-           justify-content: center;
-           
+        // FROM HERE
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        // align-items: center;
+
+        // ACTIVE NAVLINS
+        &--active {
+            color: var(--color-secondary);
+        }
 
         @media only screen and (max-width: $bp-medium) {
             font-size: 1.6rem;
             padding: var(--padding-xs);
+            flex-direction: row;
+            align-items: center;
             // background-color: blue;
         }
+
         @media only screen and (max-width: $bp-small) {}
+
         &:hover {
             color: var(--color-grey-light);
+
             @media only screen and (max-width: $bp-medium) {
                 padding: var(--padding-xs);
                 color: var(--color-secondary);
                 background-size: 200%;
             }
         }
+    }
+
+    // STYLE FOR MATERIALIZE ICONS did not work here
+    // &__i {
+    //     display: none;
+    // }
+    // HERE NAVIGATION INDICATOR
+    &__ind {
+        display: inline-block;
+        width: 0;
+        height: 3px;
+        background-color: var(--color-secondary);
+        transition: .3s ease all;
+
+        @media only screen and (max-width: $bp-medium) {
+            display: none;
+        }
+    }
+
+    &__item &__link:hover &__ind {
+        width: 100%;
     }
 
     &__playstore-container {
@@ -129,6 +162,7 @@
         @media only screen and (max-width: $bp-medium) {
             display: flex;
         }
+
         @media only screen and (max-width: $bp-small) {
             right: 1.7rem;
         }
@@ -137,7 +171,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            z-index: 11;  
+            z-index: 11;
         }
 
         &--icon {
@@ -163,7 +197,7 @@
             &::after {
                 background-color: #fff;
                 width: 3rem;
-                height: .3rem;    
+                height: .3rem;
             }
 
             &::before {
@@ -182,9 +216,9 @@
         display: none;
     }
 
-    &__toggler:checked ~ &__collapse--icon-cont &__collapse--icon {
+    &__toggler:checked~&__collapse--icon-cont &__collapse--icon {
         background-color: transparent;
-        
+
         &::before {
             top: 0;
             transform: rotate(-135deg);
@@ -199,25 +233,8 @@
 
 
 
-// ////THIS ACTIVE CLASS wAS AUTOMATICALLY PLACED BY REACT NAVLINK
-.active {
-    // color: var(--color-grey-light);
-    color: var(--color-secondary);
-}
 
-// HERE
-.nav__ind {
-    display: inline-block;
-    width: 0;
-    height: 3px;
-    background-color: var(--color-secondary);
-    transition: .3s ease all;
-
-    @media only screen and (max-width: $bp-medium){
-        display: none;
-    }
-}
-
-.nav__item .nav__link:hover .nav__ind {
-    width: 100%;
-}
+// .activeNavlink {
+//     // color: var(--color-grey-light);
+//     color: var(--color-secondary);
+// }
