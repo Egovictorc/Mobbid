@@ -1,12 +1,14 @@
 import React from "react";
 import { withFormik, Field } from "formik";
 
+
 import * as Yup from "yup";
+
 
 const renderInput = ({ field, form: {touched, errors}, ...props }) => {
   // console.log("props: ", props);
   // console.log("field: ", field);
-  // console.log("form: ", form);
+  // console.log("form: ");
   return (
     <div className={`getRide__input--cont ${props.classdiv} `}>
       {props.type === "text" && <label className="getRide__label"> {props.label} </label>}
@@ -15,6 +17,7 @@ const renderInput = ({ field, form: {touched, errors}, ...props }) => {
         <input
           {...field}
           {...props}
+          
           className={props.className}
           placeholder={props.label}
         />
@@ -29,11 +32,12 @@ const renderInput = ({ field, form: {touched, errors}, ...props }) => {
 };
 
 const renderSelect = ({form: {touched, errors}, field, ...props})=> {
+  
   return (
     <div className={`getRide__locations--cont ${props.divclass}`} >
       <label className="getRide__label"> {props.label} </label>
       <div>
-      <select {...field} {...props} className={props.className} />
+      <select {...field} {...props} className={props.className} > {props.children} </select>
       </div>
     </div>
       
@@ -68,7 +72,9 @@ const GetRideForm = props => {
         label="first Name"
         name="firstName"
         type="text"
-        className="getRide__input" classdiv="getRide__input--firstName"
+        className="getRide__input"
+        classdiv="getRide__input--firstName"
+        value={values.firstName}
       />
 
       <Field
@@ -76,17 +82,34 @@ const GetRideForm = props => {
         label="last Name"
         name="lastName"
         type="text"
-        className="getRide__input" classdiv="getRide__input--lastName"
+        className="getRide__input"
+        classdiv="getRide__input--lastName"
+        value={values.firstName}
       />
 
-      <Field component={renderSelect} name="home" label="Home" className="getRide__input getRide__locations" divclass="getRide__locations--home">
+      <Field
+        component={renderSelect}
+        name="home"
+        label="Home"
+        className="getRide__input getRide__locations"
+        divclass="getRide__locations--home"
+      >
         <option className="">Select home location</option>
         {homes.map(home => (
-          <option key={home} value={home}> {home} </option>
+          <option key={home} value={home}>
+            {" "}
+            {home}{" "}
+          </option>
         ))}
       </Field>
 
-      <Field component={renderSelect} name="work" label="Work" className="getRide__input getRide__locations" divclass="getRide__locations--work">
+      <Field
+        component={renderSelect}
+        name="work"
+        label="Work"
+        className="getRide__input getRide__locations"
+        divclass="getRide__locations--work"
+      >
         <option className="">Select work location</option>
         {homes.map(home => (
           <option key={home} value={home}>
@@ -95,22 +118,28 @@ const GetRideForm = props => {
           </option>
         ))}
       </Field>
-      
+
       <div className="getRide__btn--cont">
-      <Field
-        component={renderInput}
-        name="phoneNumber"
-        type="tel"
-        label="Phone Number" className="getRide__input" classdiv="getRide__input--phone"
-      />
-      {/* <input type="tel" /> */}
+        <Field
+          component={renderInput}
+          name="phoneNumber"
+          type="tel"
+          label="Phone Number"
+          className="getRide__input"
+          classdiv="getRide__input--phone"
+        />
+        {/* <input type="tel" /> */}
 
-      <button type="submit" style={ btnStyle } disabled={!dirty || isSubmitting} className="getRide__btn">
-        get my free ride
-      </button>
-
+        <button
+          type="submit"
+          style={btnStyle}
+          disabled={!dirty || errors || isSubmitting}
+          className="getRide__btn"
+        >
+          get my free ride
+        </button>
       </div>
-        {/* <button onClick={handleReset} disabled={!dirty || isSubmitting}>
+      {/* <button onClick={handleReset} disabled={!dirty || isSubmitting}>
         clear
       </button> */}
     </form>
@@ -135,6 +164,10 @@ const schema = Yup.object().shape({
 
 export default withFormik({
   // validate,
+  mapPropsToValues: () => ({
+    firstName: "",
+    lastName: "",
+  }),
   handleSubmit: (values)=>{ 
     console.log(values)},
   handleDrag: false,

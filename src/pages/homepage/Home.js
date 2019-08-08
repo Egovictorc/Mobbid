@@ -36,30 +36,31 @@ const handleSending = (val)=>{
 
   return (
     <ErrorBoundary>
-     <Layout title="Home">
-      
-      <header className="header">
-        <h1 className="header__heading ">
-          comfort and convenience on rides to work
-        </h1>
-        <p className="header__ride">
-          schedule ride with friends, co-workers and neighbours
-        </p>
-        
-        { isSending ? (<SendingRequest sending={handleSending} />) : (<HomeForm sending={handleSending} />) }
-        {/* {modal && <modal.success />} */}
-        <Modal.success />
-                
-      </header>
-      {/* <React.Suspense fallback="Loading ...">
+      <Layout title="Schedule Ride">
+        <header className="header">
+          <h1 className="header__heading ">
+            comfort and convenience on rides to work
+          </h1>
+          <p className="header__ride">
+            schedule ride with friends, co-workers and neighbours
+          </p>
+
+          {isSending ? (
+            <SendingRequest sending={handleSending} />
+          ) : (
+            <HomeForm sending={handleSending} />
+          )}
+          {/* {modal && <modal.success />} */}
+          <Modal.success />
+        </header>
+        {/* <React.Suspense fallback="Loading ...">
             <Sections />
       </React.Suspense> */}
 
-      <LazyLoad height={100}>
-        <Sections />
-      </LazyLoad>
-      
-    </Layout>
+        <LazyLoad height={100}>
+          <Sections />
+        </LazyLoad>
+      </Layout>
     </ErrorBoundary>
   );
 };

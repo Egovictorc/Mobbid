@@ -78,9 +78,9 @@ const Navbar = props => {
   const handleChecked = e => {
     setWidth(window.innerWidth);
     if (width < 700) {
-      console.log("width ", width);
+      // console.log("width ", width);
       setChecked(!ischecked);
-      console.log("width: ", window.innerWidth);
+      // console.log("width: ", window.innerWidth);
     } else {
       setChecked(false);
     }
