@@ -2,86 +2,81 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Loadable from 'react-loadable'
 import Cached from "@material-ui/icons/Cached";
+import getLoading from './components/Loading'
 // import Navbar from "./components/sections/Navbar";
 
-
-
-import Home from "./pages/homepage/Home";
+// Use SASS for Styling instead of CSS
+import './sass/main.scss';
+// import Home from "./pages/homepage/Home";
 
 // START HERE 
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import Works from "./pages/Works";
-import Customer from "./pages/Customer";
-import NotFound from "./pages/NotFound";
+// import About from "./pages/About";
+// import Contact from "./pages/Contact";
+// import Blog from "./pages/Blog";
+// import Works from "./pages/Works";
+// import Customer from "./pages/Customer";
+// import NotFound from "./pages/NotFound";
 
 // import FormPage from "./pages/form/FormContainer";
-import FormPage from "./pages/form/FormContainer";
+// import FormPage from "./pages/form/FormContainer";
 // import './css/style.css';
 
 // STOP HERE
 
-// Use SASS for Styling instead of CSS
-import './sass/main.scss';
 
-import ErrorBoundary from './components/ErrorBoundary';
 
 // START HERE FOR CODE SPLITTING
-// const Loading = (props)=> {
-//   if(props.error){
-//     return <div> Error loading page</div>
-//   } else if(props.timedOut) {
-//     return <div> connection timed out</div>
-//   } else if (props.delayPass){
-//     return <div> loading ...</div>
-//   }else {
-//     return <div>loading ... <Cached /></div>
-//   }
-// }
 
-// // No need to delay importing the home/ Landing page
-// // const Home = Loadable( {
-// //   loader: ()=> import("./pages/homepage/Home"),
-// //   loading: Loading,
-// //   // delay: 5000
-// // })
 
-// const About = Loadable({
-//   loader: ()=> import(`./pages/About`),
-//   loading: Loading,
-//   // delay: 5000
-// })
-// const Contact = Loadable({
-//   loader: ()=> import(`./pages/Contact`),
-//   loading: Loading,
-//   // delay: 5000
-// })
-// const Blog = Loadable({
-//   loader: ()=> import(`./pages/Blog`),
-//   loading: Loading,
-//   // delay: 5000
-// })
-// const Works = Loadable({
-//   loader: ()=> import(`./pages/Works`),
-//   loading: Loading,
-//   // delay: 5000
-// })
-// const NotFound = Loadable({
-//   loader: ()=> import(`./pages/NotFound`),
-//   loading: Loading,
-//   // delay: 5000
-// })
-// const Customer = Loadable({
-//   loader: ()=> import(`./pages/Customer`),
-//   loading: Loading,
-//   // delay: 5000
-// })
-// const FormPage = Loadable({
-//   loader: ()=> import(`./pages/form/FormContainer`),
-//   loading: Loading,
-//   // delay: 5000
-// })
+const LoadableHome = Loadable( {
+  loader: ()=> import("./pages/homepage/Home"),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
+
+const LoadableAbout = Loadable({
+  loader: ()=> import(`./pages/About`),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
+const LoadableContact = Loadable({
+  loader: ()=> import(`./pages/Contact`),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
+const LoadableBlog = Loadable({
+  loader: ()=> import(`./pages/Blog`),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
+const LoadableWorks = Loadable({
+  loader: ()=> import(`./pages/Works`),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
+const LoadableNotFound = Loadable({
+  loader: ()=> import(`./pages/NotFound`),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
+const LoadableCustomer = Loadable({
+  loader: ()=> import(`./pages/Customer`),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
+const LoadableFormPage = Loadable({
+  loader: ()=> import(`./pages/form/FormContainer`),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
 
 // STOP HERE
 
@@ -126,13 +121,13 @@ const App = () => {
         <Navbar />
         </ErrorBoundary> */}
         <Switch>
-        <Route exact strict path="/" component={Home} />
-        <Route exact strict path="/about/" component={About} />
-        <Route exact strict path="/contact/" component={Contact} />
-        <Route exact strict path="/blog/" component={Blog} />
-        <Route exact strict path="/works/" component={Works} />
-        <Route exact strict path="/customer/" component={Customer} />
-        <Route exact strict path="/formpage/" component={FormPage} />
+        <Route exact strict path="/" component={LoadableHome} />
+        <Route exact strict path="/about/" component={LoadableAbout} />
+        <Route exact strict path="/contact/" component={LoadableContact} />
+        <Route exact strict path="/blog/" component={LoadableBlog} />
+        <Route exact strict path="/works/" component={LoadableWorks} />
+        <Route exact strict path="/customer/" component={LoadableCustomer} />
+        <Route exact strict path="/formpage/" component={LoadableFormPage} />
         
           {/* {
             routes.map( route => <Route exact strict path={route.path} component={route.component} key={route.component} />
@@ -145,7 +140,7 @@ const App = () => {
           <Route exact strict path="/pages/blog/" component={Blog} />
           <Route exact strict path="/pages/contact/" component={Contact} /> */}
           
-          <Route component={NotFound} />
+          <Route component={LoadableNotFound} />
         </Switch>
         {/* <Footer /> */}
       </div>

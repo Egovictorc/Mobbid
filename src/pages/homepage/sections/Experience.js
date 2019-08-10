@@ -23,6 +23,10 @@ import AppStore2x from "../../../images/app-store@2x.png";
 // const AppStore1x = React.lazy( ()=> import("../../../../images/app-store@1x.png"));
 // const AppStore2x = React.lazy( ()=> import("../../../../images/app-store@1x.png"));
 
+// const experienceData = [
+//   {className: }
+// ]
+
 export const Experience = () => {
   return (
     <section className="section experience">

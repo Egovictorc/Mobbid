@@ -42,8 +42,10 @@ const HomeForm = props => {
   const [count, setCount] = useState(1);
 
   const btnStyle = {
-    cursor: isSubmitting || !isValid ? "not-allowed" : "pointer",
-    title: !isValid ? "Pls fill in your details correctly" : null
+    // cursor: isSubmitting || !isValid ? "not-allowed" : "pointer",
+    title: !isValid ? "Pls fill in your details correctly" : null,
+    opacity:  isSubmitting || !isValid ? .6 : 1,
+    pointerEvents:  isSubmitting || !isValid ? 'none' : 'all'
   };
 
   // send data
