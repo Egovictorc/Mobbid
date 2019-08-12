@@ -23,9 +23,27 @@ import AppStore2x from "../../../images/app-store@2x.png";
 // const AppStore1x = React.lazy( ()=> import("../../../../images/app-store@1x.png"));
 // const AppStore2x = React.lazy( ()=> import("../../../../images/app-store@1x.png"));
 
-// const experienceData = [
-//   {className: }
-// ]
+const experienceData = [
+  {
+    className: "experience__div experience__safe",
+    div: {
+      className: "experience__img--container",
+      img: {
+        className: "experience__img",
+        srcSet: `${Shield2x} 144w, ${Shield1x} 72w`,
+        sizes: "(min-width: 550px), (max-width: 549px)",
+        src: { Shield1x },
+        alt: "Mobbid shield"
+      }
+    },
+    h3: { className: "experience__div--heading heading-3", text: "safe" },
+    paragragh: {
+      className: "experience__par article__par",
+      text:
+        "vehicle checks on every vehicle and valid licence is required for all users"
+    }
+  }
+];
 
 export const Experience = () => {
   return (
@@ -118,13 +136,17 @@ export const Improve = () => {
         no more stress, improve your commute
       </h2>
       <div className="improve__download">
-
-        {data.map( item =>  
-        <div className="improve__img--container" key={item.alt}>
-          <img className={item.imgClass} srcSet={item.srcSet} sizes={item.sizes} src={item.src} alt={item.alt} />
-
-        </div>
-        ) }
+        {data.map(item => (
+          <div className="improve__img--container" key={item.alt}>
+            <img
+              className={item.imgClass}
+              srcSet={item.srcSet}
+              sizes={item.sizes}
+              src={item.src}
+              alt={item.alt}
+            />
+          </div>
+        ))}
 
         {/* Remove later */}
         {/* <div className="improve__img--container">
