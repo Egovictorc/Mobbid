@@ -24,5 +24,6 @@ yarn-error.log*
 
 #env variables
 .env
+.env.development
 #original fbconfig backup
 fbConfig.txt
