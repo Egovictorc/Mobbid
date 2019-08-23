@@ -50,7 +50,7 @@ const Footer = () => {
         <ul className="footer__list">
           {socialLinks.map(link => (
             <li className="footer__item" key={link.alt}>
-              <a href={link.to} className="footer__link footer__link--social" title={link.title}>
+              <a href={link.to} className="footer__link footer__link--social" title={link.title} rel="no-referrer">
                 <img
                   src={link.src}
                   alt={link.alt}

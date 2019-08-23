@@ -138,7 +138,7 @@ let WorksData = [
         debounce: false,
         image: {
           className: "work__img",
-          srcSet: `${EnjoyRide2x} 600w, ${EnjoyRide1x} 300w`,
+          srcset: `${EnjoyRide2x} 600w, ${EnjoyRide1x} 300w`,
           sizes: "(min-width: 550px), (max-width: 549px)",
           src: EnjoyRide1x,
           alt: "Mobbid enjoy-ride"
