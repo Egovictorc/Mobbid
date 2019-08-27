@@ -36,7 +36,7 @@ const handleSending = (val)=>{
 
   return (
     <ErrorBoundary>
-      <Layout title="Schedule Ride">
+      <Layout title="Home">
         <header className="header">
           <h1 className="header__heading ">
             comfort and convenience on rides to work
