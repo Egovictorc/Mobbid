@@ -5,6 +5,7 @@ import Loadable from 'react-loadable'
 import getLoading from './components/Loading'
 // import Navbar from "./components/sections/Navbar";
 
+
 // Use SASS for Styling instead of CSS
 import './sass/main.scss';
 // import Home from "./pages/homepage/Home";
@@ -26,6 +27,7 @@ import './sass/main.scss';
 
 
 // START HERE FOR CODE SPLITTING
+
 
 
 const LoadableHome = Loadable( {

@@ -36,6 +36,8 @@ const store = createStore(
 // reduxFirestore(fbConfig),
 // reactReduxFirebase(fbConfig)
 // )
+// require dot env
+// require('dotenv').config({path: '.env.${process.env.NODE_ENV'})
 
 ReactDOM.render(
   <Provider store={store}>
