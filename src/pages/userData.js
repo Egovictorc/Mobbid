@@ -49,7 +49,7 @@ export default function userData() {
                     )}
                    </tbody>
                </table>
-            ) : error ? <div>{error.message} </div> : <
+            ) : <
                 Loading />}
         </Layout>
     )
