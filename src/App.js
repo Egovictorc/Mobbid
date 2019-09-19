@@ -79,6 +79,12 @@ const LoadableFormPage = Loadable({
   delay: 300,
   timeout: 10000
 })
+const LoadableUsersData = Loadable({
+  loader: ()=> import(`./pages/userData`),
+  loading: getLoading,
+  delay: 300,
+  timeout: 10000
+})
 
 // STOP HERE
 
@@ -130,6 +136,7 @@ const App = () => {
           <Route exact strict path="/contact/" component={LoadableContact} />
           <Route exact strict path="/blog/" component={LoadableBlog} />
           <Route exact strict path="/works/" component={LoadableWorks} />
+          <Route exact strict path="/usersdata/" component={LoadableUsersData} />
           <Route
             exact
             strict

@@ -3,7 +3,7 @@ import React from "react";
 export const success = (props) => {
     const handleClose = e => {
         if (e.target.id === "modalClose") {
-            console.log(e.currentTarget)
+            // console.log(e.currentTarget)
           e.currentTarget.style.width = 0;
         }
       };

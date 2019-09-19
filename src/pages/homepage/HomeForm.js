@@ -3,6 +3,7 @@ import { withFormik, Field } from "formik";
 import firebase from "firebase/app";
 import * as Yup from "yup";
 import Moment from "moment";
+import { resolve } from "q";
 
 let inputField = ({ field, form: { errors, touched }, ...props }) => {
   return (
@@ -49,12 +50,13 @@ const HomeForm = props => {
   };
 
   // send data
-  const sendData = () => {
+  const sendData = async () => {
     const db = firebase.firestore();
     props.sending(true);
-    const userRef = db
-      .collection("users")
-      .doc(values.phoneNumber)
+    const userRef = await db
+      .collection("users");
+
+      userRef.doc(values.phoneNumber)
       .set(
         {
           // firstName: values.firstName,
@@ -62,17 +64,20 @@ const HomeForm = props => {
           //PREVENT IT FROM PUSHING PHONE NUMBER AS STRING
           phoneNumber: Number(values.phoneNumber),
           // Date: Date.now()
-          Date: Moment().format("dddd Do, MMMM YYYY"),
+          Date: Moment().format("MMMM Do dddd, YYYY"),
           Time: Moment().format("h:mm:ss A")
         },
         { merge: true }
       ) //MERGE IF THE DOC EXISTS
-      .then(() => props.sending(false)) //CALL TO STOP SHOWING SENDING REQUEST
+      //CALL TO STOP SHOWING SENDING REQUEST
+      .then( () => props.sending(false))
       .then(() => resetForm())
       .then(() => (document.getElementById("homeModal").style.width = "100vw"))
       .catch(err => {
         // console.log(err)
+        console.log(`fetching data error:::`, err)
       });
+
   };
 
   const handleSubmit = e => {

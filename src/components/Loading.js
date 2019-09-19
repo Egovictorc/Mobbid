@@ -8,7 +8,7 @@ export const Loading = () => {
   return (
     <section>
       <div style={{ textAlign: "center" }}>
-        <img src={LoadingArrow} alt="Beach_resort loading..." />{" "}
+        <img src={LoadingArrow} alt=" loading..." />{" "}
       </div>
       <div
         className=""

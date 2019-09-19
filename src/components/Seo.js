@@ -9,7 +9,7 @@ import iPhone2x from '../images/tinified/iphone@2x.png';
 const Seo = ({ title }) => (
   <Helmet
     title={title}
-    titleTemplate="%s | Mobbid NG"
+    titleTemplate="Mobbid NG | %s"
     meta={[
       { name: "author", content: "Ego Victor, Anelechi Edwin" },
       { name: "keywords", content: `${title} Mobbid, Mobbid NG` },
