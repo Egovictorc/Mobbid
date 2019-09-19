@@ -8,6 +8,7 @@ import { Loading } from "../components/Loading"
 export default function userData() {
 
     const [usersList, setUsersList ] = useState([])
+    const [error, setError ] = useState({})
 
     const db = firebase.firestore();
     const users = db.collection('users')
@@ -18,8 +19,7 @@ export default function userData() {
         .then( (snapshot) => snapshot.forEach( doc => data.push(doc.data()) )
         )
         .then(() => setUsersList(data))
-        .catch( err => console.log(new Error (err) )
-        )
+        .catch( err => setError(err) )
 
         
     useEffect( ()=> {
@@ -49,7 +49,7 @@ export default function userData() {
                     )}
                    </tbody>
                </table>
-            ) : <
+            ) : error ? <div>{error.message} </div> : <
                 Loading />}
         </Layout>
     )
