@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import Logo from "../images/mobbid logo.svg";
 import PlayStoreImage from "../images/google-play@1x.png";
+import * as ROUTES from "./routes"
 
 // MATERIALIZE ICONS
 import Home from "@material-ui/icons/Home";
@@ -87,11 +88,11 @@ const Navbar = props => {
   };
 
   let links = [
-    { to: "/", item: "home", icon: Home },
-    { to: "/works/", item: "how it works", icon: SettingsRemote },
-    { to: "/customer/", item: "customer stories", icon:  SentimentVerySatisfied},
-    { to: "/about/", item: "about us", icon: RecentActors },
-    { to: "/blog/", item: "blog", icon: Book },
+    { to: ROUTES.HOME, item: "home", icon: Home },
+    { to: ROUTES.WORKS, item: "how it works", icon: SettingsRemote },
+    { to: ROUTES.CUSTOMER, item: "customer stories", icon:  SentimentVerySatisfied},
+    { to: ROUTES.ABOUT, item: "about us", icon: RecentActors },
+    { to: ROUTES.BLOG, item: "blog", icon: Book },
     ///TESTING FORM COMPONENT
     { to: "/formPage/", item: "form", icon: Book }
   ];

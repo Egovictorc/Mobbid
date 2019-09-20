@@ -4,6 +4,7 @@ import Loadable from 'react-loadable'
 // import Cached from "@material-ui/icons/Cached";
 import getLoading from './components/Loading'
 // import Navbar from "./components/sections/Navbar";
+import * as ROUTES from "./components/routes"
 
 
 // Use SASS for Styling instead of CSS
@@ -130,23 +131,23 @@ const App = () => {
         </ErrorBoundary> */}
         <Switch>
          
-            <Route exact strict path="/" component={LoadableHome} />
+            <Route exact strict path={ROUTES.HOME} component={LoadableHome} />
           
-          <Route exact strict path="/about/" component={LoadableAbout} />
-          <Route exact strict path="/contact/" component={LoadableContact} />
-          <Route exact strict path="/blog/" component={LoadableBlog} />
-          <Route exact strict path="/works/" component={LoadableWorks} />
-          <Route exact strict path="/usersdata/" component={LoadableUsersData} />
+          <Route exact strict path={ROUTES.ABOUT} component={LoadableAbout} />
+          <Route exact strict path={ROUTES.CONTACT} component={LoadableContact} />
+          <Route exact strict path={ROUTES.BLOG} component={LoadableBlog} />
+          <Route exact strict path={ROUTES.WORKS} component={LoadableWorks} />
+          <Route exact strict path={ROUTES.USERSDATA} component={LoadableUsersData} />
           <Route
             exact
             strict
-            path="/customer/"
+            path={ROUTES.CUSTOMER}
             component={LoadableCustomer}
           />
           <Route
             exact
             strict
-            path="/formpage/"
+            path={ROUTES.FORMPAGE}
             component={LoadableFormPage}
           />
 

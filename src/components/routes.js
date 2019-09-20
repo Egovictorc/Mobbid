@@ -1,0 +1,9 @@
+export const HOME = "/";
+export const ABOUT = "/about/";
+export const CONTACT = "/contact/";
+export const WORKS = "/works/";
+export const CUSTOMER = "/customer/";
+export const FORMPAGE = "/formpage/";
+export const USERSDATA = "/usersdata/";
+export const BLOG = "/blog/";
+export const NOTFOUND = "/notfound/";
