@@ -8,6 +8,7 @@ import Layout from "../../components/Layout";
 import Sections from "./sections/Sections.js";
 import HomeForm from './HomeForm';
 import SendingRequest from './SendingRequest';
+
 // import HomeForm from './ReduxForm';
 // import OrdForm from './OrdForm';
 import * as Modal from './HomeModal';
@@ -16,12 +17,13 @@ import { asyncCreateUser, increment } from '../../components/actionCreators/Acti
 import { connect } from 'react-redux';
 import ErrorBoundary from '../../components/ErrorBoundary';
 
-const mapDispatchToProps = {asyncCreateUser, increment};
+// content loader
+import ContentLoader from "react-content-loader"
 
+const mapDispatchToProps = {asyncCreateUser, increment};
 
 const Home = props => {
   
-
   const [modal, setModal] = useState(false)
   
 const handleModal = ()=> {
@@ -37,6 +39,7 @@ const handleSending = (val)=>{
   return (
     <ErrorBoundary>
       <Layout title="Home">
+     
         <header className="header">
           <h1 className="header__heading ">
             comfort and convenience on rides to work

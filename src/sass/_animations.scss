@@ -19,3 +19,25 @@
     animation-timing-function: ease;
     animation-fill-mode: backwards;
 }
+
+@keyframes loading {
+    0% {
+        transform: translateY(5px) 
+    }
+   
+    100% {
+        transform: translateY(0px) 
+    }   
+}
+
+.animation {
+    animation-duration: .9s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in-out;
+}
+// LOADING
+.loading {
+    animation-name: loading;
+    @extend .animation;
+}

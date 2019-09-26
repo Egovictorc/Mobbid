@@ -3,7 +3,7 @@ import { withFormik, Field } from "formik";
 import firebase from "firebase/app";
 import * as Yup from "yup";
 import Moment from "moment";
-import { resolve } from "q";
+import { DATABASE } from "../../constants/db"
 
 let inputField = ({ field, form: { errors, touched }, ...props }) => {
   return (
@@ -51,10 +51,9 @@ const HomeForm = props => {
 
   // send data
   const sendData = async () => {
-    const db = firebase.firestore();
+    // const db = firebase.firestore();
     props.sending(true);
-    const userRef = await db
-      .collection("users");
+    const userRef = await DATABASE.collection("users");
 
       userRef.doc(values.phoneNumber)
       .set(
@@ -80,6 +79,7 @@ const HomeForm = props => {
 
   };
 
+  
   const handleSubmit = e => {
     e.preventDefault();
 // 

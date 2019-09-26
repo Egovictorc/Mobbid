@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import Logo from "../images/mobbid logo.svg";
 import PlayStoreImage from "../images/google-play@1x.png";
-import * as ROUTES from "./routes"
+import * as ROUTES from "../constants/routes"
 
 // MATERIALIZE ICONS
 import Home from "@material-ui/icons/Home";

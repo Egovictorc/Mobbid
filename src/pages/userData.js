@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import firebase from "firebase/app";
-import Layout from "../components/Layout";
-import { Loading } from "../components/Loading"
 
+import { DATABASE } from "../constants/db"
+import UsersDataWidget from './usersDataWidget';
 
 
 export default function userData() {
@@ -10,8 +10,8 @@ export default function userData() {
     const [usersList, setUsersList ] = useState([])
     const [error, setError ] = useState({})
 
-    const db = firebase.firestore();
-    const users = db.collection('users')
+    // const db = firebase.firestore();
+    const users = DATABASE.collection('users')
 
     const data = [];
     const getUsers = async() => 
@@ -21,36 +21,18 @@ export default function userData() {
         .then(() => setUsersList(data))
         .catch( err => setError(err) )
 
-        
+        // console.log(`getUsers::::::: `, getUsers())
+        // console.log(`errors:::: `, error)
+        // console.log(`users:::: `, users)
+        console.log(`DATABASE:::: `, DATABASE)
+        // console.log(`users check::::: `, getUsers())
+
     useEffect( ()=> {
         getUsers()
     }, [] )
 
 
     return (
-        <Layout title="usersList">
-            { (usersList.length > 0 ) ? (
-               <table>
-                     <thead>
-                     <tr>
-                        <th> S/N </th>
-                        <th> FirstName </th>
-                        <th> PhoneNumber </th>
-                        <th> Date </th>
-                     </tr>
-                     </thead>
-                   <tbody>
-                   {usersList.map( ( {id, firstName, phoneNumber, Date}, index ) => <tr key={phoneNumber}>
-                        <td> {index + 1} </td>
-                        <td> {firstName} </td>
-                        <td> 0{phoneNumber} </td>
-                        <td> {Date} </td>
-                    </tr>
-                    )}
-                   </tbody>
-               </table>
-            ) : <
-                Loading />}
-        </Layout>
+        <UsersDataWidget usersList={usersList} />
     )
 }

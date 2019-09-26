@@ -4,7 +4,7 @@ import Loadable from 'react-loadable'
 // import Cached from "@material-ui/icons/Cached";
 import getLoading from './components/Loading'
 // import Navbar from "./components/sections/Navbar";
-import * as ROUTES from "./components/routes"
+import * as ROUTES from "./constants/routes"
 
 
 // Use SASS for Styling instead of CSS

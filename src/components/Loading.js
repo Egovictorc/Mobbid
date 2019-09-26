@@ -1,14 +1,15 @@
 import React from "react";
 import LoadingArrow from "../images/gif/loading-arrow.gif";
+import Building from "../images/building.png";
 
 import styled from "styled-components";
 import { FaAnkh } from "react-icons/fa";
 
 export const Loading = () => {
   return (
-    <section>
+    <section style={{height: `400px`}}>
       <div style={{ textAlign: "center" }}>
-        <img src={LoadingArrow} alt=" loading..." />{" "}
+        <img src={Building} alt=" loading"  className="loading" />{" "}
       </div>
       <div
         className=""
