@@ -19,12 +19,15 @@ export default function userData() {
         .then( (snapshot) => snapshot.forEach( doc => data.push(doc.data()) )
         )
         .then(() => setUsersList(data))
-        .catch( err => setError(err) )
+        .catch( err => {
+            setError(err) 
+            // console.log(`user error:::: `, err)
+        })
 
         // console.log(`getUsers::::::: `, getUsers())
         // console.log(`errors:::: `, error)
         // console.log(`users:::: `, users)
-        console.log(`DATABASE:::: `, DATABASE)
+        // console.log(`DATABASE:::: `, DATABASE)
         // console.log(`users check::::: `, getUsers())
 
     useEffect( ()=> {

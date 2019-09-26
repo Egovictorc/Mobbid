@@ -7,24 +7,25 @@ import { FaAnkh } from "react-icons/fa";
 
 export const Loading = () => {
   return (
-    <section style={{height: `400px`}}>
-      <div style={{ textAlign: "center" }}>
-        <img src={Building} alt=" loading"  className="loading" />{" "}
+    <section style={
+      {
+        minHeight: `300px`,
+        maxHeight: `40vh`,
+        display: `flex`,
+        alignItems: `center`,
+      }}>
+      <div style={{ textAlign: "center", margin: "auto" }} className="loading__container">
+        <img src={Building} alt=" loading" className="loading" />
+        <div
+          className=""
+          style={{ textAlign: "center", textTransform: 'capitalize', marginTop: `2rem` }}
+        >
+          <p> Loading ... </p>
+          <p> please wait... </p>
+        </div>
+
       </div>
-      <div
-        className=""
-        style={{ textAlign: "center", textTransform: 'capitalize' }}
-      >
-        <FaAnkh
-          size="30px"
-          css={`
-            color: purple;
-          `}
-          
-        />
-        <p> Loading ... </p>
-        <p> please wait... </p>
-      </div>
+
     </section>
   );
 };
@@ -32,7 +33,7 @@ export const Loading = () => {
 export const LoadingError = () => {
   return (
     <section>
-      <div style={ {textAlign: 'text-center', textTransform: 'uppercase'} }>
+      <div style={{ textAlign: 'text-center', textTransform: 'uppercase' }}>
         <FaAnkh
           size="30px"
           css={`
@@ -49,7 +50,7 @@ export const LoadingError = () => {
 export const LoadingTimedOut = () => {
   return (
     <section>
-      <div className="" style={ {textTransform: 'uppercase', textAlign: 'center'} }>
+      <div className="" style={{ textTransform: 'uppercase', textAlign: 'center' }}>
         <FaAnkh
           size="30px"
           css={`
