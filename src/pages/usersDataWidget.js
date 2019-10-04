@@ -4,6 +4,7 @@ import { Loading } from "../components/Loading"
 
 const UsersDataWidget = ({usersList}) => (
 <Layout title="usersList">
+   <div  style={{minHeight: `60vh`, maxHeight: `600px`}}>
             { (usersList.length > 0 ) ? (
                <table>
                      <thead>
@@ -15,7 +16,7 @@ const UsersDataWidget = ({usersList}) => (
                      </tr>
                      </thead>
                    <tbody>
-                   {usersList.map( ( {id, firstName, phoneNumber, Date}, index ) => <tr key={phoneNumber}>
+                   {usersList.map( ( {id, firstName, phoneNumber, Date}, index ) => <tr key={id}>
                         <td> {index + 1} </td>
                         <td> {firstName} </td>
                         <td> 0{phoneNumber} </td>
@@ -24,8 +25,10 @@ const UsersDataWidget = ({usersList}) => (
                     )}
                    </tbody>
                </table>
+               
             ) : <
                 Loading />}
+                </div>
         </Layout>
 )
 

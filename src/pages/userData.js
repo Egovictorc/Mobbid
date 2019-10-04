@@ -9,21 +9,38 @@ export default function userData() {
 
     const [usersList, setUsersList ] = useState([])
     const [error, setError ] = useState({})
+    
+    var connectedRef = firebase.database().ref(".info/connected");
+    connectedRef.on("value", function(snap) {
+      if (snap.val() === true) {
+        alert("connected");
+      } else {
+        alert("not connected");
+      }
+    });
+   
+    let data = [];
+    const getUsers = async() => {
+        // const db = firebase.firestore();
+      
+  
+        console.log(`log database:::::: `, DATABASE.collection("users").firestore._queue)
+     const users = await DATABASE.collection('users')
 
-    // const db = firebase.firestore();
-    const users = DATABASE.collection('users')
-
-    const data = [];
-    const getUsers = async() => 
-    users.orderBy(`Date`, `desc`).get()
-        .then( (snapshot) => snapshot.forEach( doc => data.push(doc.data()) )
-        )
-        .then(() => setUsersList(data))
-        .catch( err => {
-            setError(err) 
-            // console.log(`user error:::: `, err)
-        })
-
+     users.orderBy(`Date`, `desc`).get()
+         .then( (snapshot) => {
+            //  console.log(`snapshot::::`, snapshot)
+             data = snapshot.docs.map( doc => ({ ...doc.data(), id: doc.id}) )
+            //  snapshot.forEach( doc => data.push({...doc.data(), id: doc.id}) )
+             console.log(`data::::: `, data)
+           return setUsersList(data)
+         })
+         .catch( err => {
+             setError(err) 
+             console.log(`${err.name}: ${err.message}`)
+         })
+    }
+    console.log(`data::::: `, data)
         // console.log(`getUsers::::::: `, getUsers())
         // console.log(`errors:::: `, error)
         // console.log(`users:::: `, users)

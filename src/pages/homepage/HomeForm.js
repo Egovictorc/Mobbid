@@ -54,7 +54,7 @@ const HomeForm = props => {
     // const db = firebase.firestore();
     props.sending(true);
     const userRef = await DATABASE.collection("users");
-
+      
       userRef.doc(values.phoneNumber)
       .set(
         {
@@ -62,7 +62,7 @@ const HomeForm = props => {
           ...values,
           //PREVENT IT FROM PUSHING PHONE NUMBER AS STRING
           phoneNumber: Number(values.phoneNumber),
-          // Date: Date.now()
+          // Date: Date.now() format date entry
           Date: Moment().format("MMMM Do dddd, YYYY"),
           Time: Moment().format("h:mm:ss A")
         },
